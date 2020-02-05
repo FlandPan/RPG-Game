@@ -173,7 +173,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.904243
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -8.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 680644463}
   m_Layer: 0
   m_Name: Electric floor tile
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,10 +299,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4ce05e6df57ec134b885fbd43e7eb765, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 746b77a0d5f65324799caeb400d0c02d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 689084391}
   m_Layer: 0
   m_Name: Electric floor tile (5)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 929490195}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &689084391
 BoxCollider2D:
@@ -406,10 +406,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4ce05e6df57ec134b885fbd43e7eb765, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 746b77a0d5f65324799caeb400d0c02d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
@@ -460,10 +460,10 @@ Transform:
   - {fileID: 1254322757}
   - {fileID: 680644462}
   - {fileID: 1243203690}
-  - {fileID: 2003982553}
-  - {fileID: 1761912266}
   - {fileID: 2121085676}
+  - {fileID: 1761912266}
   - {fileID: 689084390}
+  - {fileID: 2003982553}
   - {fileID: 2142366159}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1243203691}
   m_Layer: 0
   m_Name: Electric floor tile (1)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -774,7 +774,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 37620e0253affd047865e0bf9b9c0a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 697d2a7dd948d7c4ca1ff7897839b015, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -991,18 +991,18 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -2, y: -3, z: 0}
     second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -1, y: -3, z: 0}
     second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
+      m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
@@ -1081,8 +1081,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -2, y: -2, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1171,8 +1171,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -2, y: -1, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1261,8 +1261,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -2, y: 0, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1351,9 +1351,9 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: -2, y: 1, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
@@ -1695,19 +1695,27 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 11
     m_Data: {fileID: 1606781179}
-  - m_RefCount: 46
+  - m_RefCount: 42
     m_Data: {fileID: 11400000, guid: 83ea2d1aeee1c80409ab345d4ee3051f, type: 2}
-  - m_RefCount: 34
+  - m_RefCount: 32
     m_Data: {fileID: 11400000, guid: 7a24a1c0cf00aab4f94068acba6c92da, type: 2}
+  - m_RefCount: 4
+    m_Data: {fileID: 11400000, guid: e283af1823ab98c4f8645720026268f1, type: 2}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: cc173caba8c4d794e9279f44ff71c246, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 46
+  - m_RefCount: 42
     m_Data: {fileID: 21300000, guid: 920dc0b471f77b744a5fd577c5a88de8, type: 3}
   - m_RefCount: 11
     m_Data: {fileID: 1186520983}
-  - m_RefCount: 34
+  - m_RefCount: 32
     m_Data: {fileID: 21300000, guid: b67dac273715d4a45843d61789d2534a, type: 3}
+  - m_RefCount: 4
+    m_Data: {fileID: 21300000, guid: 89f1eadaf30e8e7428ed3e60cd0d4ae3, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: 21300000, guid: 643c608ee61533245a3aabd77c56cdbe, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 91
+  - m_RefCount: 88
     m_Data:
       e00: 1
       e01: 0
@@ -1725,6 +1733,60 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
+  - m_RefCount: 2
+    m_Data:
+      e00: 0.000000059604645
+      e01: -0.99999994
+      e02: 0
+      e03: 0
+      e10: 0.99999994
+      e11: 0.000000059604645
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 1
+    m_Data:
+      e00: 0.000000059604645
+      e01: 0.99999994
+      e02: 0
+      e03: 0
+      e10: -0.99999994
+      e11: 0.000000059604645
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 0
+    m_Data:
+      e00: 7.763793e-14
+      e01: NaN
+      e02: 0
+      e03: 7.763782e-14
+      e10: 2.89e-43
+      e11: NaN
+      e12: 7.34684e-40
+      e13: 2.89e-43
+      e20: 0
+      e21: NaN
+      e22: 1.8774491e+11
+      e23: 0
+      e30: 0
+      e31: NaN
+      e32: 4.5905e-41
+      e33: 0
   m_TileColorArray:
   - m_RefCount: 80
     m_Data: {r: 1, g: 1, b: 1, a: 1}
@@ -1989,7 +2051,7 @@ GameObject:
   - component: {fileID: 1761912267}
   m_Layer: 0
   m_Name: Electric floor tile (3)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2072,7 +2134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 37620e0253affd047865e0bf9b9c0a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 697d2a7dd948d7c4ca1ff7897839b015, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2192,6 +2254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b5e3f60f60ba64bb2a7da09419f99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wireTiles: []
   red: {r: 1, g: 0, b: 0, a: 1}
   black: {r: 0, g: 0, b: 0, a: 0}
   blue: {r: 0, g: 0, b: 0, a: 0}
@@ -2288,7 +2351,7 @@ GameObject:
   - component: {fileID: 2003982554}
   m_Layer: 0
   m_Name: Electric floor tile (2)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2305,7 +2368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 929490195}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2003982554
 BoxCollider2D:
@@ -2371,7 +2434,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 37620e0253affd047865e0bf9b9c0a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 697d2a7dd948d7c4ca1ff7897839b015, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2395,7 +2458,7 @@ GameObject:
   - component: {fileID: 2121085677}
   m_Layer: 0
   m_Name: Electric floor tile (4)
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2412,7 +2475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 929490195}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!61 &2121085677
 BoxCollider2D:
@@ -2478,7 +2541,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 37620e0253affd047865e0bf9b9c0a56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 697d2a7dd948d7c4ca1ff7897839b015, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2567,7 +2630,7 @@ Transform:
   m_GameObject: {fileID: 2142366157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 929490195}
   m_RootOrder: 7

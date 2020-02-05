@@ -17,6 +17,8 @@ public class ElectricFloorManager : MonoBehaviour
         wireTiles[3].GetComponent<SpriteRenderer>().color = red;
         wireTiles[2].GetComponent<SpriteRenderer>().color = red;
         wireTiles[0].GetComponent<SpriteRenderer>().color = red;
+        wireTiles[4].GetComponent<SpriteRenderer>().color = red;
+        wireTiles[5].GetComponent<SpriteRenderer>().color = red;
 
     }
     
