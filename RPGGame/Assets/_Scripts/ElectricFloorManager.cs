@@ -13,18 +13,20 @@ public class ElectricFloorManager : MonoBehaviour
     void Start()
     {
         wireTiles = GameObject.FindGameObjectsWithTag("Tiles");
-        wireTiles[1].GetComponent<SpriteRenderer>().color = red;
-        wireTiles[3].GetComponent<SpriteRenderer>().color = red;
-        wireTiles[2].GetComponent<SpriteRenderer>().color = red;
         wireTiles[0].GetComponent<SpriteRenderer>().color = red;
-        wireTiles[4].GetComponent<SpriteRenderer>().color = red;
-        wireTiles[5].GetComponent<SpriteRenderer>().color = red;
-
     }
     
-    public void changeTiles( Color colour, params GameObject[] tiles){
+    public void changeTiles(Color colour, params GameObject[] tiles){
         foreach (GameObject tile in tiles){   
-            
+            tile.GetComponent<SpriteRenderer>().color = colour;
+        }
+    }
+
+    public void setTilesOnline(Color colour){
+        foreach (GameObject tile in wireTiles){
+            if (tile.GetComponent<SpriteRenderer>().color == colour){
+                tile.GetComponent<BoxCollider2D>().enabled = true;
+            }
         }
     }
 }

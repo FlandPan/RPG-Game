@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,17 +7,26 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     private Text _timer;
+    private Text _healthText;
+    public int _hp = 100;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
     }
     void Start()
     {
-        _timer = this.GetComponentInChildren<Text>();
+        _timer = GameObject.Find("Timer").GetComponent<Text>();
+        _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));
+
+        GameEvents.current.OnPlayerDamage += decreaseHealth;
     }
     void Update()
     {
         _timer.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
+        _healthText.text = "HP:   " + _hp;
+    }
+    private void decreaseHealth(){
+        _hp -= 10;
     }
 }
