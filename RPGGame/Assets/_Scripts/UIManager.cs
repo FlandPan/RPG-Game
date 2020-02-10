@@ -26,7 +26,8 @@ public class UIManager : MonoBehaviour
         _timer.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
         _healthText.text = "HP:   " + _hp;
     }
-    private void decreaseHealth(){
-        _hp -= 10;
+    private void decreaseHealth(int hp){
+        if(_hp >= hp)
+            _hp -= hp;
     }
 }

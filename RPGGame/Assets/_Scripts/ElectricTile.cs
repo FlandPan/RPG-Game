@@ -8,7 +8,7 @@ public class ElectricTile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.tag == "Player"){
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-            GameEvents.current.playerGetsDamaged();
+            GameEvents.current.playerGetsDamaged(10);
         }
     }
     void OnTriggerExit2D(Collider2D other)

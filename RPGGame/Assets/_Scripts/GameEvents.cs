@@ -12,11 +12,11 @@ public class GameEvents : MonoBehaviour
         current =this;
     }
 
-    public event Action OnPlayerDamage;
+    public event Action<int> OnPlayerDamage;
 
-    public void playerGetsDamaged(){
+    public void playerGetsDamaged(int hp){
         if (OnPlayerDamage != null){
-            OnPlayerDamage();
+            OnPlayerDamage(hp);
         }
     }
 }
