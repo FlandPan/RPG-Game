@@ -6,17 +6,20 @@ public class EnemyChaser : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public Rigidbody2D player;
+    private Rigidbody2D _player;
 
     private Vector2 _movement;
 
-    
+    void Start()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        _movement.y = (player.position.y-rb.position.y);
-        _movement.x = (player.position.x-rb.position.x);
+        _movement.y = (_player.position.y-rb.position.y);
+        _movement.x = (_player.position.x-rb.position.x);
     }
 
     void FixedUpdate()
