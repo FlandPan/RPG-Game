@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class EnemyChaser : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     public Rigidbody2D rb;
     private Rigidbody2D _player;
 
     private Vector2 _movement;
+    public float forceFactor;
 
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        _movement.y = (_player.position.y-rb.position.y);
-        _movement.x = (_player.position.x-rb.position.x);
-    }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + _movement * moveSpeed * Time.fixedDeltaTime);
+        float x = _player.position.x-rb.position.x;
+        float y = _player.position.y-rb.position.y;
+        Vector2 unitDirection = Vector2.ClampMagnitude(new Vector2(x,y), 1);
+        rb.velocity = new Vector2(x,y);
+        //rb.AddForce(unitDirection * moveSpeed * Time.fixedDeltaTime,ForceMode2D.Force);
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.name == "Player"){
+            GameEvents.current.playerGetsDamaged(5);
+            Vector2 direction = new Vector2(_player.position.x-rb.position.x,_player.position.y-rb.position.y);
+            //rb.AddForce(direction*-forceFactor,ForceMode2D.Impulse);
+            rb.position = _player.position-direction;
+        }
     }
 }
