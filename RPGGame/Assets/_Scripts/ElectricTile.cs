@@ -5,16 +5,18 @@ using UnityEngine.Tilemaps;
 
 public class ElectricTile : MonoBehaviour
 {
+    public Color mainColor;
+
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.tag == "Player"){
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            colour = Color.yellow;
             GameEvents.current.playerGetsDamaged(10);
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-            if (other.gameObject.tag == "Player"){
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        if (other.gameObject.tag == "Player"){
+            colour = mainColor;
         }
     }
 
