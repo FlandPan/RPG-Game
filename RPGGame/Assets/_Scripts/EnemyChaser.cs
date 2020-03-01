@@ -13,7 +13,7 @@ public class EnemyChaser : MonoBehaviour
 
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        _player = PlayerSingleton.player.GetComponent<Rigidbody2D>();
     }
 
 
