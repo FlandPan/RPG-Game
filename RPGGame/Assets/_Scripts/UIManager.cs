@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));
 
-        //GameEvents.current.OnPlayerDamage += decreaseHealth;
+        GameEvents.current.OnPlayerDamage += decreaseHealth;
     }
     void Update()
     {
