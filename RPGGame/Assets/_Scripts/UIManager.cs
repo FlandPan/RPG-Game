@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     private Text _timer;
     private Text _healthText;
     public int _hp = 100;
+    public UIManager(){
+
+    }
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -19,7 +22,7 @@ public class UIManager : MonoBehaviour
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));
 
-        GameEvents.current.OnPlayerDamage += decreaseHealth;
+        //GameEvents.current.OnPlayerDamage += decreaseHealth;
     }
     void Update()
     {
