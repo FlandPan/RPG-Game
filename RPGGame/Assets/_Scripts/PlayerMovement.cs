@@ -6,7 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Animator animator;
-
+    public float upperBound;
+    public float lowerBound;
+    public float leftBound;
+    public float rightBound;
+    
 
     Vector3 movement;
 
@@ -33,14 +37,14 @@ public class PlayerMovement : MonoBehaviour
     private void Blink(Vector2 direction){
         direction *= 3*Vector2.SqrMagnitude(direction);
         Vector2 newPos = transform.position + new Vector3(direction.x, direction.y);
-        if (newPos.x < -10)
-            newPos.x = -11;
-        if (newPos.y < -9)
-            newPos.y = -9;
-        if (newPos.x > 10)
-            newPos.x = 10;
-        if (newPos.y > 7)
-            newPos.y = 7;
+        if (newPos.x < leftBound)
+            newPos.x = leftBound;
+        if (newPos.y < lowerBound)
+            newPos.y = lowerBound;
+        if (newPos.x > rightBound)
+            newPos.x = rightBound;
+        if (newPos.y > upperBound)
+            newPos.y = upperBound;
         transform.position = newPos;
     }
 }
