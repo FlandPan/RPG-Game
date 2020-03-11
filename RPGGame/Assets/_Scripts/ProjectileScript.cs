@@ -7,7 +7,7 @@ public class ProjectileScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == PlayerSingleton.player){
-            GameEvents.current.playerGetsDamaged(10);
+            GameEvents.current.PlayerGetsDamaged(10);
         }
     }
 }

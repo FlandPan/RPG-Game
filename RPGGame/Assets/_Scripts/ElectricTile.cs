@@ -11,7 +11,7 @@ public class ElectricTile : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             colour = Color.yellow;
             if (Time.frameCount % 10 == 0)
-            GameEvents.current.playerGetsDamaged(1);
+            GameEvents.current.PlayerGetsDamaged(1);
         }
     }
     void OnTriggerExit2D(Collider2D other)

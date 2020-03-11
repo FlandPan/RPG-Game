@@ -31,7 +31,7 @@ public class EnemyChaser : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject == PlayerSingleton.player){
-            GameEvents.current.playerGetsDamaged(10);
+            GameEvents.current.PlayerGetsDamaged(10);
         }
     }
 }

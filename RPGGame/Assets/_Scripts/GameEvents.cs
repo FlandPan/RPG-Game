@@ -14,7 +14,7 @@ public class GameEvents : MonoBehaviour
 
     public event Action<int> OnPlayerDamage;
 
-    public void playerGetsDamaged(int hp){
+    public void PlayerGetsDamaged(int hp){
         if (OnPlayerDamage != null){
             OnPlayerDamage(hp);
         }
