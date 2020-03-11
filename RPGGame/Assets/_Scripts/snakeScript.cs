@@ -17,14 +17,14 @@ public class snakeScript : MonoBehaviour
     private int _num=0;
 
     //*****************************TAIL PROJECTILE***********************************************
-    public Rigidbody tailProjRB;
+    public Rigidbody2D tailProjRB;
     public float tailProjSpeed = 15f;
     private GameObject _tailProj;
     private Vector3 _tailProjMove;    
     private bool _tailReturn = false;
 
     //********************************HEAD PROJECTILE*********************************************
-    public Rigidbody headProjRB;
+    public Rigidbody2D headProjRB;
     private GameObject _headProj;
     private Vector3 [] _headProjMove;    
     private int _paraPosCount=0;
@@ -37,6 +37,7 @@ public class snakeScript : MonoBehaviour
     void Start()
     {
         _move.x =3;
+        hero = PlayerSingleton.player;
     }
 
     // Update is called once per frame
@@ -118,7 +119,7 @@ public class snakeScript : MonoBehaviour
                 _headProj.transform.position = snake.transform.position;
                 _headProjMove = parabolicCoordinates(snake.transform.position,hero.transform.position,snake5.transform.position,(snake.transform.position.x > snake5.transform.position.x)?-1:1);
                 snake5.SetActive(false);
-                headProjRB = _headProj.GetComponent<Rigidbody>();
+                headProjRB = _headProj.GetComponent<Rigidbody2D>();
             }
             else
             {
@@ -127,12 +128,12 @@ public class snakeScript : MonoBehaviour
             _tailProj.transform.position = snake5.transform.position;
             snake5.SetActive(false);
             _tailProjMove = hero.transform.position - _tailProj.transform.position;
-            tailProjRB = _tailProj.GetComponent<Rigidbody>();
+            tailProjRB = _tailProj.GetComponent<Rigidbody2D>();
             }
         }
         if(_tailProj !=null)
         {
-            tailProjRB.MovePosition(tailProjRB.position + _tailProjMove / unitVector(_tailProjMove) * tailProjSpeed * Time.fixedDeltaTime);
+            tailProjRB.MovePosition(tailProjRB.position + (Vector2)_tailProjMove / unitVector(_tailProjMove) * tailProjSpeed * Time.fixedDeltaTime);
             if(_tailProj.transform.position.y > 10 || _tailProj.transform.position.y < -8 || _tailProj.transform.position.x > 8 || _tailProj.transform.position.x < -17)
             {
                 //Triggers the return of the projectile

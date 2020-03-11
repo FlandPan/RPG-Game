@@ -28,4 +28,10 @@ public class EnemyChaser : MonoBehaviour
 
         this.transform.Translate(direction*Time.deltaTime*moveSpeed);
     }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject == PlayerSingleton.player){
+            GameEvents.current.playerGetsDamaged(10);
+        }
+    }
 }

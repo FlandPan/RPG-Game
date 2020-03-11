@@ -12,17 +12,13 @@ public class UIManager : MonoBehaviour
     public UIManager(){
 
     }
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
     void Start()
     {
+        GameEvents.current.OnPlayerDamage += decreaseHealth;
         _timer = GameObject.Find("Timer").GetComponent<Text>();
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));
 
-        GameEvents.current.OnPlayerDamage += decreaseHealth;
     }
     void Update()
     {
@@ -30,7 +26,8 @@ public class UIManager : MonoBehaviour
         _healthText.text = "HP:   " + _hp;
     }
     private void decreaseHealth(int hp){
-        if(_hp >= hp)
+        if(_hp >= hp){
             _hp -= hp;
+        }
     }
 }
