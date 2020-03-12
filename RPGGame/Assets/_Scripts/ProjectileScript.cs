@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    protected int Damage = 0;
+    private int Damage = 0;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == PlayerSingleton.player){
@@ -12,8 +12,13 @@ public class ProjectileScript : MonoBehaviour
         }
     }
     //For each projectile override this method with stats, etc.
-    public void ProjectileDamage(int damage){
-        //Multipliers
-        Damage = damage;
+    public int ProjectileDamage{
+        get {
+            return Damage;
+        }
+        set {
+            //Put multipliers here
+            Damage = value;
+        }
     }
 }
