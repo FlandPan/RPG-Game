@@ -3,22 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class UIManager : MonoBehaviour
 {
     private Text _timer;
     private Text _healthText;
     public int _hp = 100;
-    public UIManager(){
-
-    }
+    public Text PortalText;
     void Start()
     {
         GameEvents.current.OnPlayerDamage += DecreaseHealth;
         _timer = GameObject.Find("Timer").GetComponent<Text>();
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));
-
+        PortalText.enabled = false;
     }
     void Update()
     {
@@ -29,5 +26,12 @@ public class UIManager : MonoBehaviour
         if(_hp >= hp){
             _hp -= hp;
         }
+    }
+    public void Display(string location){
+        PortalText.enabled = true;
+        PortalText.text = "Press E to teleport to " + location;
+    }
+    public void DisplayExit(){
+        PortalText.enabled = false;
     }
 }
