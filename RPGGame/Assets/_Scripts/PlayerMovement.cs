@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float lowerBound;
     public float leftBound;
     public float rightBound;
-    
+    public Transform firePoint;
+    public GameObject arrowPrefab;
 
     Vector3 movement;
 
@@ -26,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
         if (Input.GetKeyDown(KeyCode.Space)){
             Blink(movement);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Shoot();
         }
     }
 
@@ -46,5 +51,9 @@ public class PlayerMovement : MonoBehaviour
         if (newPos.y > upperBound)
             newPos.y = upperBound;
         transform.position = newPos;
+    }
+
+    void Shoot(){
+        Instantiate(arrowPrefab, firePoint.transform.position,firePoint.transform.rotation);
     }
 }
