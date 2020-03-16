@@ -10,8 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public float lowerBound;
     public float leftBound;
     public float rightBound;
-    public Transform firePoint;
-    public GameObject arrowPrefab;
+    public GameObject projectilePrefab;
+    public GameObject horizontalProjectilePrefab;
+    
+    public float bulletForce = 15f;
 
     Vector3 movement;
 
@@ -28,8 +30,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             Blink(movement);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetButtonDown("Fire1"))
         {
+            Debug.Log("fire@");
             Shoot();
         }
     }
@@ -52,8 +55,48 @@ public class PlayerMovement : MonoBehaviour
             newPos.y = upperBound;
         transform.position = newPos;
     }
-
     void Shoot(){
-        Instantiate(arrowPrefab, firePoint.transform.position,firePoint.transform.rotation);
+        
+        if(movement.y == -1)
+        {
+            GameObject projectile = Instantiate(projectilePrefab);
+            projectile.transform.position = transform.position;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            rb.AddForce(new Vector3(0,-1,0) * bulletForce,ForceMode.Impulse);
+        }
+        else if (movement.y == 1)
+        {
+            GameObject projectile = Instantiate(projectilePrefab);
+            projectile.transform.position = transform.position;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            SpriteRenderer temp = projectile.GetComponent<SpriteRenderer>();
+            temp.flipX = true;
+            temp.flipY = true;
+            rb.AddForce(new Vector3(0,1,0) * bulletForce,ForceMode.Impulse);
+        }
+        else if (movement.x == 1)
+        {
+            GameObject projectile = Instantiate(horizontalProjectilePrefab);
+            projectile.transform.position = transform.position;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            SpriteRenderer temp = projectile.GetComponent<SpriteRenderer>();
+            temp.flipY = true;
+            temp.flipX = true;
+            rb.AddForce(new Vector3(1,0,0) * bulletForce,ForceMode.Impulse);
+        }
+        else if (movement.x == -1)
+        {
+            GameObject projectile = Instantiate(horizontalProjectilePrefab);
+            projectile.transform.position = transform.position;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            rb.AddForce(new Vector3(-1,0,0) * bulletForce,ForceMode.Impulse);
+        }
+        else
+        {
+            GameObject projectile = Instantiate(projectilePrefab);
+            projectile.transform.position = transform.position;
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            rb.AddForce(new Vector3(0,-1,0) * bulletForce,ForceMode.Impulse);
+        }
     }
 }
