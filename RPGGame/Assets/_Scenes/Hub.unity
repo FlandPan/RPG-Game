@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNumber: 1
-  Location: 
+  Location: ECE
 --- !u!212 &1587340769
 SpriteRenderer:
   m_ObjectHideFlags: 0
