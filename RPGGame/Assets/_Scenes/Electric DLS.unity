@@ -9513,6 +9513,18 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 672526017}
+    - target: {fileID: 6608909216704976795, guid: 83b3c3bed23596f4592350eb59ba66e4,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1025467358937108777, guid: 99be751120fb9dd40aa8155b27c38b46,
+        type: 3}
+    - target: {fileID: 6608909216704976795, guid: 83b3c3bed23596f4592350eb59ba66e4,
+        type: 3}
+      propertyPath: horizontalProjectilePrefab
+      value: 
+      objectReference: {fileID: 5731769250438339485, guid: 8be0834b46bfdc24a8a434a8e80ba0e1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b3c3bed23596f4592350eb59ba66e4, type: 3}
 --- !u!1001 &7610393213991179049
