@@ -49,6 +49,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -98,6 +99,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   animator: {fileID: 6608909216704976793}
+  upperBound: 0
+  lowerBound: 0
+  leftBound: 0
+  rightBound: 0
+  projectilePrefab: {fileID: 0}
+  horizontalProjectilePrefab: {fileID: 0}
+  firePrefab: {fileID: 0}
+  bulletForce: 15
+  weaponChoice: 0
 --- !u!95 &6608909216704976793
 Animator:
   serializedVersion: 3

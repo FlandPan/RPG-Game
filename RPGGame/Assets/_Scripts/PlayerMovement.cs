@@ -13,7 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject horizontalProjectilePrefab;
     
+    public GameObject firePrefab;
+
     public float bulletForce = 15f;
+    public static int weaponChoice=0;
 
     Vector3 movement;
 
@@ -30,9 +33,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             Blink(movement);
         }
-        if(Input.GetButtonDown("Fire1"))
+        if(weaponChoice == 0 && Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+        if(weaponChoice == 1 && Input.GetButtonDown("Fire1"))
+        {
+            Burn();
         }
     }
 
@@ -98,4 +105,38 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector3(0,-1,0) * bulletForce,ForceMode.Impulse);
         }
     }
+        void Burn()
+        {
+                if(movement.y == -1)
+            {
+                GameObject fire = Instantiate(firePrefab);
+                fire.transform.position = transform.position + new Vector3(0,-2,0);
+            }
+            else if (movement.y == 1)
+            {
+                GameObject fire = Instantiate(firePrefab);
+                fire.transform.position = transform.position + new Vector3(0,2,0);
+            }
+            else if (movement.x == 1)
+            {
+                GameObject fire = Instantiate(firePrefab);
+                fire.transform.position = transform.position + new Vector3(2,0,0);
+            }
+            else if (movement.x == -1)
+            {
+                GameObject fire = Instantiate(firePrefab);
+                fire.transform.position = transform.position + new Vector3(-2,0,0);
+            }
+            else
+            {
+                GameObject fire = Instantiate(firePrefab);
+                fire.transform.position = transform.position + new Vector3(0,-2,0);
+            }
+
+        }
+        public void setWeaponChoice(int x)
+        {
+            weaponChoice = x;
+        }
+    
 }
