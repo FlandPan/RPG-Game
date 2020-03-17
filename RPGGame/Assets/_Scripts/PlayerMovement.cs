@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        
         if (Input.GetKeyDown(KeyCode.Space)){
             Blink(movement);
         }
@@ -107,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     }
         void Burn()
         {
-                if(movement.y == -1)
+            if(movement.y == -1)
             {
                 GameObject fire = Instantiate(firePrefab);
                 fire.transform.position = transform.position + new Vector3(0,-2,0);
