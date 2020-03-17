@@ -1862,6 +1862,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5731769250438339485, guid: 8be0834b46bfdc24a8a434a8e80ba0e1,
         type: 3}
+    - target: {fileID: 6608909216704976795, guid: 83b3c3bed23596f4592350eb59ba66e4,
+        type: 3}
+      propertyPath: firePrefab
+      value: 
+      objectReference: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b3c3bed23596f4592350eb59ba66e4, type: 3}
 --- !u!213 &1378951347
