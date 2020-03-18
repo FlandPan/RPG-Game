@@ -5,6 +5,23 @@ using UnityEngine;
 public class GunSwitch : MonoBehaviour
 {
     public GameObject player;
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            pm.setWeaponChoice(1);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            pm.setWeaponChoice(0);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            PlayerMovement pm = player.GetComponent<PlayerMovement>();
+            pm.setWeaponChoice(0);
+        }
+    }
     public void Switch(){
         Debug.Log(transform.position.x);
         if(transform.position.x < 170)
@@ -19,7 +36,6 @@ public class GunSwitch : MonoBehaviour
         }
         else
         {
-        Debug.Log("Switched null");
             PlayerMovement pm = player.GetComponent<PlayerMovement>();
         }
     }

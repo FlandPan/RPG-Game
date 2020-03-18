@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tiles
   - UI
+  - Attack
   layers:
   - Default
   - TransparentFX
