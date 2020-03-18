@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6608909216704976793}
   - component: {fileID: 6608909216704976794}
   - component: {fileID: 6608909216704976792}
+  - component: {fileID: -435959573222151454}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,13 +104,7 @@ MonoBehaviour:
   lowerBound: 0
   leftBound: 0
   rightBound: 0
-  projectilePrefab: {fileID: 1025467358937108777, guid: 99be751120fb9dd40aa8155b27c38b46,
-    type: 3}
-  horizontalProjectilePrefab: {fileID: 5731769250438339485, guid: 8be0834b46bfdc24a8a434a8e80ba0e1,
-    type: 3}
-  firePrefab: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
-    type: 3}
-  bulletForce: 15
+  movement: {x: 0, y: 0, z: 0}
 --- !u!95 &6608909216704976793
 Animator:
   serializedVersion: 3
@@ -176,3 +171,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-435959573222151454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608909216704976772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d12e7329e58d5a4bb5a2e180d7a498d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1025467358937108777, guid: 99be751120fb9dd40aa8155b27c38b46,
+    type: 3}
+  firePrefab: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
+    type: 3}
+  player: {fileID: 0}
+  bulletForce: 15
