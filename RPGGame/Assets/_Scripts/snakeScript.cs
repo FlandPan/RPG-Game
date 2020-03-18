@@ -284,6 +284,5 @@ public class snakeScript : MonoBehaviour
         }
         return array;
     }
-
     
 }
