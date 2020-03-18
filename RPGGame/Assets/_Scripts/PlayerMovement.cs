@@ -10,9 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float lowerBound;
     public float leftBound;
     public float rightBound;
-    public GameObject projectilePrefab;
-    public GameObject horizontalProjectilePrefab;
-    
+    public GameObject projectilePrefab;    
     public GameObject firePrefab;
 
     public float bulletForce = 15f;
@@ -75,77 +73,19 @@ public class PlayerMovement : MonoBehaviour
         transform.position = newPos;
     }
     void Shoot(){
-        
-        if(movement.y == -1)
-        {
-            GameObject projectile = Instantiate(projectilePrefab);
-            projectile.transform.position = transform.position;
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            rb.AddForce(new Vector3(0,-1,0) * bulletForce,ForceMode.Impulse);
-        }
-        else if (movement.y == 1)
-        {
-            GameObject projectile = Instantiate(projectilePrefab);
-            projectile.transform.position = transform.position;
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            SpriteRenderer temp = projectile.GetComponent<SpriteRenderer>();
-            temp.flipX = true;
-            temp.flipY = true;
-            rb.AddForce(new Vector3(0,1,0) * bulletForce,ForceMode.Impulse);
-        }
-        else if (movement.x == 1)
-        {
-            GameObject projectile = Instantiate(horizontalProjectilePrefab);
-            projectile.transform.position = transform.position;
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            SpriteRenderer temp = projectile.GetComponent<SpriteRenderer>();
-            temp.flipY = true;
-            temp.flipX = true;
-            rb.AddForce(new Vector3(1,0,0) * bulletForce,ForceMode.Impulse);
-        }
-        else if (movement.x == -1)
-        {
-            GameObject projectile = Instantiate(horizontalProjectilePrefab);
-            projectile.transform.position = transform.position;
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            rb.AddForce(new Vector3(-1,0,0) * bulletForce,ForceMode.Impulse);
-        }
-        else
-        {
-            GameObject projectile = Instantiate(projectilePrefab);
-            projectile.transform.position = transform.position;
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            rb.AddForce(new Vector3(0,-1,0) * bulletForce,ForceMode.Impulse);
-        }
+        Quaternion newRotation = new Quaternion();
+        float rotation = Mathf.Abs(movement.x)*(180 + movement.x * -90) + movement.y*(90 + movement.y*90);
+        newRotation = Quaternion.Euler(0,0,rotation);
+        GameObject projectile = Instantiate(projectilePrefab,transform.position,newRotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        rb.AddForce(Vector3.Scale(new Vector3(1,1,0),movement) * bulletForce,ForceMode.Impulse);
     }
         void Burn()
         {
-            if(movement.y == -1)
-            {
-                GameObject fire = Instantiate(firePrefab);
-                fire.transform.position = transform.position + new Vector3(0,-2,0);
-            }
-            else if (movement.y == 1)
-            {
-                GameObject fire = Instantiate(firePrefab);
-                fire.transform.position = transform.position + new Vector3(0,2,0);
-            }
-            else if (movement.x == 1)
-            {
-                GameObject fire = Instantiate(firePrefab);
-                fire.transform.position = transform.position + new Vector3(2,0,0);
-            }
-            else if (movement.x == -1)
-            {
-                GameObject fire = Instantiate(firePrefab);
-                fire.transform.position = transform.position + new Vector3(-2,0,0);
-            }
-            else
-            {
-                GameObject fire = Instantiate(firePrefab);
-                fire.transform.position = transform.position + new Vector3(0,-2,0);
-            }
-
+            GameObject fire = Instantiate(firePrefab);
+            Vector3 newPos = new Vector3(2,2,0);
+            newPos = Vector3.Scale(newPos,movement);
+            fire.transform.position = transform.position + newPos;
         }
         public void setWeaponChoice(int x)
         {
