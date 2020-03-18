@@ -45,7 +45,7 @@ public class snakeScript : MonoBehaviour
     {
         if(_tailReturn == false && _paraReturn ==false)
         {
-            if(Time.frameCount%5 ==0 && _hasMoved == false)
+            if(Time.frameCount%10 ==0 && _hasMoved == false)
             {
                 snake5.transform.position = snake4.transform.position;
                 snake4.transform.position = snake3.transform.position;
@@ -57,7 +57,7 @@ public class snakeScript : MonoBehaviour
                 _count++;
             }
 
-            if(Time.frameCount%5 ==1)
+            if(Time.frameCount%10 ==1)
             {
                 _hasMoved = false;
             }

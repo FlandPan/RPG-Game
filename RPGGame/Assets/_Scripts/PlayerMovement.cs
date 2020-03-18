@@ -20,9 +20,19 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 movement;
 
+    private int shootAttSpd =0;
+    private int burnAttSpd =0;
 
     void Update()
     {
+        if(shootAttSpd!=0)
+        {
+        shootAttSpd--;
+        }
+        if(burnAttSpd!=0)
+        {
+        burnAttSpd--;
+        }
         //Inputs
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -30,17 +40,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        
+
         if (Input.GetKeyDown(KeyCode.Space)){
             Blink(movement);
         }
-        if(weaponChoice == 0 && Input.GetButtonDown("Fire1"))
+        if(weaponChoice == 0 && Input.GetButtonDown("Fire1") && shootAttSpd == 0)
         {
             Shoot();
+            shootAttSpd = 50;
         }
-        if(weaponChoice == 1 && Input.GetButtonDown("Fire1"))
+        if(weaponChoice == 1 && Input.GetButtonDown("Fire1") && burnAttSpd == 0)
         {
             Burn();
+            burnAttSpd = 100;
         }
     }
 
