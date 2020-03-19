@@ -9030,12 +9030,12 @@ PrefabInstance:
     - target: {fileID: 1111920772908001057, guid: 81f0b884c26f067488d4032b3f21f050,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.2
+      value: -9.7
       objectReference: {fileID: 0}
     - target: {fileID: 1111920772908001057, guid: 81f0b884c26f067488d4032b3f21f050,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.82
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1111920772908001057, guid: 81f0b884c26f067488d4032b3f21f050,
         type: 3}
@@ -9109,6 +9109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
+  enemyDamage: 5
   deathEffect: {fileID: 0}
 --- !u!1001 &3719704447115147484
 PrefabInstance:

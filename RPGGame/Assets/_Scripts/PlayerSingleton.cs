@@ -5,17 +5,18 @@ using UnityEngine;
 public class PlayerSingleton : MonoBehaviour
 {
     public static GameObject player;
-    void Start()
+    public static void Awake()
     {
         if (player == null){
             player = GameObject.FindGameObjectWithTag("Player");
-            Debug.Log(player.name);
         }
         else {
             Debug.Log("Created");
         }
     }
     public static void ChosenType(GameObject type){
+        Debug.Log(type.name + " Chosen");
         player = type;
+        Debug.Log(player.name);
     }
 }

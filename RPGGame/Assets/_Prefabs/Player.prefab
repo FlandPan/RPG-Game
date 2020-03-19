@@ -189,6 +189,7 @@ MonoBehaviour:
   firePrefab: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
     type: 3}
   bulletForce: 15
+  weaponChoice: 0
 --- !u!114 &5293229230531565662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520a43237b726514f8ce260541934321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage: 20
+  playerHealth: 100
+  pDamage: 10
   armor: 10

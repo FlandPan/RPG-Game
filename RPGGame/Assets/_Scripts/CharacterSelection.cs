@@ -11,6 +11,7 @@ public class CharacterSelection : MonoBehaviour
         PlayerSingleton.player = boy;
         Destroy(girl);
         PlayerSingleton.ChosenType(boy);
+        DontDestroyOnLoad(boy);
         this.gameObject.SetActive(false);
     }
 
@@ -18,6 +19,7 @@ public class CharacterSelection : MonoBehaviour
         PlayerSingleton.player = girl;
         Destroy(boy);
         PlayerSingleton.ChosenType(girl);
+        DontDestroyOnLoad(girl);
         this.gameObject.SetActive(false);
     }
 }
