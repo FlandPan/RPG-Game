@@ -35,12 +35,12 @@ public class PlayerAttack : MonoBehaviour
             _burnAttSpd--;
             }
             
-            if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.Q) && _shootAttSpd == 0)
+            if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.Mouse0) && _shootAttSpd == 0)
             {
                 Shoot();
                 _shootAttSpd = 2;
             }
-            if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.Q) && _burnAttSpd == 0)
+            if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.Mouse0) && _burnAttSpd == 0)
             {
                 Burn();
                 _burnAttSpd = 100;
