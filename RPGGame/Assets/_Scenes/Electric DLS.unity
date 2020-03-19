@@ -2533,7 +2533,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1111920772908001085, guid: 81f0b884c26f067488d4032b3f21f050,
     type: 3}
-  maxEnemies: 10
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -9049,7 +9048,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03ae447610dccc40b2c6c84e51b1cba, type: 3}
-<<<<<<< HEAD
 --- !u!1001 &1111920771852678066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9139,8 +9137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-=======
->>>>>>> 17ed00d5766ec700201c150b17e6fe0a1fa18f58
 --- !u!1001 &3719704447115147484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9251,11 +9247,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -162
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917434619767833233, guid: 99dfd5c2c9425f141a303867a6960c18,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -10.400024
       objectReference: {fileID: 0}
     - target: {fileID: 5917434619869340972, guid: 99dfd5c2c9425f141a303867a6960c18,
         type: 3}
