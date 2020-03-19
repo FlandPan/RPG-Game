@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileScript : MonoBehaviour
+public abstract class ProjectileScript : MonoBehaviour
 {
-    private int Damage = 20;
+    public static int Damage;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         EnemyStats enemy = other.GetComponent<EnemyStats>();
@@ -12,16 +13,6 @@ public class ProjectileScript : MonoBehaviour
         {
             enemy.TakeDamage(Damage);
             Destroy(gameObject);
-        }
-    }
-    //For each projectile override this method with stats, etc.
-    public int ProjectileDamage{
-        get {
-            return Damage;
-        }
-        set {
-            //Put multipliers here
-            Damage = value;
         }
     }
 }
