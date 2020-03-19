@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6608909216704976794}
   - component: {fileID: 6608909216704976792}
   - component: {fileID: -435959573222151454}
+  - component: {fileID: 3003428863598499739}
   m_Layer: 0
   m_Name: Girl Player
   m_TagString: Player
@@ -115,7 +116,7 @@ Animator:
   m_GameObject: {fileID: 6608909216704976772}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe9e93d382a79bb43b540d51e2c5f3a9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 32b3e877b2443f544bb85e0b24ee150b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -188,3 +189,18 @@ MonoBehaviour:
   firePrefab: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
     type: 3}
   bulletForce: 15
+--- !u!114 &3003428863598499739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608909216704976772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520a43237b726514f8ce260541934321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 150
+  damage: 10
+  armor: 10

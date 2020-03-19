@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 5516336108041114687}
   - component: {fileID: 6105612225974663941}
   - component: {fileID: 6529388252040182021}
-  - component: {fileID: 2042970646170517810}
   - component: {fileID: 8177500483553583125}
   - component: {fileID: 147259782975237752}
-  - component: {fileID: 389852800643176182}
+  - component: {fileID: 1512744423276692492}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -83,18 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2042970646170517810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3519611683289008864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4d3ee282ca076408a5a775512c3990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &8177500483553583125
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +96,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 6}
   m_Direction: 0
 --- !u!50 &147259782975237752
 Rigidbody2D:
@@ -132,7 +119,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &389852800643176182
+--- !u!114 &1512744423276692492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +128,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3519611683289008864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b383a70a9823f41a419c8ce487e25b, type: 3}
+  m_Script: {fileID: 11500000, guid: 95a7827ab0a26b444b3977bb400c8720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
