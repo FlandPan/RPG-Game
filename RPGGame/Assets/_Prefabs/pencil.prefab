@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5403217212732818827}
   - component: {fileID: -8732823302037554967}
   - component: {fileID: 6769299587701224132}
+  - component: {fileID: 2958466883846565682}
   m_Layer: 0
   m_Name: pencil
   m_TagString: Attack
@@ -147,3 +148,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+--- !u!114 &2958466883846565682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025467358937108777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520a43237b726514f8ce260541934321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage: 20
+  armor: 10
