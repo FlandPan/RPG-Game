@@ -35,12 +35,12 @@ public class PlayerAttack : MonoBehaviour
             _burnAttSpd--;
             }
             
-            if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.Q) && _shootAttSpd == 0)
+            if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.Mouse0) && _shootAttSpd == 0)
             {
                 Shoot();
                 _shootAttSpd = 50;
             }
-            if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.Q) && _burnAttSpd == 0)
+            if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.Mouse0) && _burnAttSpd == 0)
             {
                 Burn();
                 _burnAttSpd = 100;
@@ -53,9 +53,9 @@ public class PlayerAttack : MonoBehaviour
             float rotation = Mathf.Abs(pm.movement.x)*(180 + pm.movement.x * -90) + pm.movement.y*(90 + pm.movement.y*90);
             newRotation = Quaternion.Euler(0,0,rotation);
             GameObject projectile = Instantiate(projectilePrefab,transform.position,newRotation);
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             Vector3 temp = (pm.movement.x ==0 && pm.movement.y ==0)?new Vector3(0,-1,0):pm.movement;
-            rb.AddForce(Vector3.Scale(new Vector3(1,1,0),temp) * bulletForce,ForceMode.Impulse);
+            rb.AddForce(Vector3.Scale(new Vector3(1,1,0),temp) * bulletForce,ForceMode2D.Impulse);
     }
         void Burn()
         {
