@@ -7,6 +7,10 @@ public class CharacterSelection : MonoBehaviour
     public GameObject boy;
     public GameObject girl;
 
+    void Start()
+    {
+        CheckDuplicates(2);
+    }
     public void SwitchBoy() {
         PlayerSingleton.player = boy;
         Destroy(girl);
@@ -14,7 +18,7 @@ public class CharacterSelection : MonoBehaviour
         DontDestroyOnLoad(boy);
         boy.GetComponent<PlayerMovement>().SetEvent();
         this.gameObject.SetActive(false);
-        CheckDuplicates();
+        CheckDuplicates(1);
     }
 
     public void SwitchGirl() {
@@ -24,12 +28,12 @@ public class CharacterSelection : MonoBehaviour
         DontDestroyOnLoad(girl);
         girl.GetComponent<PlayerMovement>().SetEvent();
         this.gameObject.SetActive(false);
-        CheckDuplicates();
+        CheckDuplicates(1);
     }
     
-    public void CheckDuplicates(){
+    public void CheckDuplicates(int length){
         GameObject[] dups = GameObject.FindGameObjectsWithTag("Player");
-        if (dups.Length > 1){
+        if (dups.Length > length){
             Destroy(dups[0]);
         }
     }

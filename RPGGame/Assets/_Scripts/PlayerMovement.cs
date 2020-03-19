@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         _inputEnabled = true;
     }
     public void SetEvent(){
+        Debug.Log("Yes");
         GameEvents.current.OnPlayerDeath += DisableInputs;
     }
     public void SetBounds(params int[] bounds){
