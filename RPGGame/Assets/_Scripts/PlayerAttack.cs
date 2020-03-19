@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
             if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.Q) && _shootAttSpd == 0)
             {
                 Shoot();
-                _shootAttSpd = 50;
+                _shootAttSpd = 2;
             }
             if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.Q) && _burnAttSpd == 0)
             {
