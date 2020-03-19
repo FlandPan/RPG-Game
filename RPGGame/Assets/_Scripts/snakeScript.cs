@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeScript : MonoBehaviour
+public class snakeScript : MonoBehaviour
 {
     //********************************SNAKE MOVEMENT****************************************8
     public GameObject snake;
@@ -17,14 +17,14 @@ public class SnakeScript : MonoBehaviour
     private int _num=0;
 
     //*****************************TAIL PROJECTILE***********************************************
-    public Rigidbody2D tailProjRB;
+    private Rigidbody2D tailProjRB;
     public float tailProjSpeed = 15f;
     private GameObject _tailProj;
     private Vector3 _tailProjMove;    
     private bool _tailReturn = false;
 
     //********************************HEAD PROJECTILE*********************************************
-    public Rigidbody2D headProjRB;
+    private Rigidbody2D headProjRB;
     private GameObject _headProj;
     private Vector3 [] _headProjMove;    
     private int _paraPosCount=0;
@@ -284,5 +284,8 @@ public class SnakeScript : MonoBehaviour
         }
         return array;
     }
-    
+     void OnCollisionEnter2D(Collision2D other)
+    {
+        GameEvents.current.PlayerGetsDamaged(10);
+    }
 }

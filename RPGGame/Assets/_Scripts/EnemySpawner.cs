@@ -6,20 +6,24 @@ public class EnemySpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject enemyPrefab;
-    private bool check = false;
+    public int maxEnemies = 10;
+    private bool _check = false;
+    private int _enemyCount = 0;
+    
 
     // Update is called once per frame
     void Update()
     {
-        if(check == false && Mathf.Floor(Time.time) %5 == 0)
+        if(_check == false && Mathf.Floor(Time.time) %5 == 0 && maxEnemies != _enemyCount)
         {
             GameObject enemy = Instantiate(enemyPrefab);
             enemy.transform.position = new Vector3(-10,-5,0);
-            check = true;
+            _check = true;
+            _enemyCount++;
         }
-        else if(check == true &&Mathf.Floor(Time.time) %5 == 1)
+        else if(_check == true &&Mathf.Floor(Time.time) %5 == 1)
         {
-            check = false;
+            _check = false;
         }
     }
 }
