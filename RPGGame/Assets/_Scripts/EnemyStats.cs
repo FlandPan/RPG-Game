@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public int enemyHealth = 100;
 
-    public int enemyDamage = 1;
+    public int enemyDamage;
 
     public GameObject deathEffect;
 
