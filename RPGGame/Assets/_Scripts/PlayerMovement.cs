@@ -14,18 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 movement;
     private bool _inputEnabled;
 
-
-    void Start()
+    void Awake()
     {
         _inputEnabled = true;
+    }
+    public void SetEvent(){
         GameEvents.current.OnPlayerDeath += DisableInputs;
-        if (SceneManager.GetActiveScene().name == "Electric DLS"){
-            Debug.Log("Yes");
-            upperBound = 6;
-            lowerBound = -8;
-            leftBound = -10;
-            rightBound = 10;
-        }
     }
     public void SetBounds(params int[] bounds){
         upperBound = bounds[0];
