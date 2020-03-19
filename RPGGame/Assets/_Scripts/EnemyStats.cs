@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public int enemyHealth = 100;
 
-    public int enemyDamage = 5;
+    public int enemyDamage = 1;
 
     public GameObject deathEffect;
 
@@ -26,7 +26,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameEvents.current.PlayerGetsDamaged(1);
+            GameEvents.current.PlayerGetsDamaged(enemyDamage);
         }
     }
 }
