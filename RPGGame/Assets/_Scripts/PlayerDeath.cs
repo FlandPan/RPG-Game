@@ -13,7 +13,7 @@ public class PlayerDeath : MonoBehaviour
     }
     void Update()
     {
-        int hp =System.Int32.Parse(healthText.text.Split(' ')[1]);
+        int hp = System.Int32.Parse(healthText.text.Split(' ')[1]);
 
         if (hp <= 0){
             deathScreen.SetActive(true);

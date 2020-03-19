@@ -9228,6 +9228,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -162
       objectReference: {fileID: 0}
+    - target: {fileID: 5917434619869340972, guid: 99dfd5c2c9425f141a303867a6960c18,
+        type: 3}
+      propertyPath: m_Text
+      value: 'HP: '
+      objectReference: {fileID: 0}
     - target: {fileID: 5917434620397517451, guid: 99dfd5c2c9425f141a303867a6960c18,
         type: 3}
       propertyPath: m_Name

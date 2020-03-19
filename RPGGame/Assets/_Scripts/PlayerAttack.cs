@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private int _burnAttSpd =0;
     private bool _inputEnabled;
     
-    void Awake()
+    void Start()
     {
         GameEvents.current.OnPlayerDeath += DisableInput;
         _inputEnabled = true;
