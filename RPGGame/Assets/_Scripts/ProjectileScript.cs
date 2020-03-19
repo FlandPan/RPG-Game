@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ProjectileScript : MonoBehaviour
+public abstract class ProjectileScript : PlayerStats
 {
     public static int Damage;
 
@@ -11,7 +11,7 @@ public abstract class ProjectileScript : MonoBehaviour
         EnemyStats enemy = other.GetComponent<EnemyStats>();
         if (enemy != null)
         {
-            enemy.TakeDamage(Damage);
+            enemy.TakeDamage(Damage * pDamage);
             Destroy(gameObject);
         }
     }
