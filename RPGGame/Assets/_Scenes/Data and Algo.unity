@@ -529,7 +529,7 @@ MonoBehaviour:
   tailProjRB: {fileID: 0}
   tailProjSpeed: 15
   headProjRB: {fileID: 0}
-  hero: {fileID: 0}
+  hero: {fileID: 804650166}
   prefab: {fileID: 3519611683289008864, guid: 677e379b5501b124c99718bf756dbff7, type: 3}
 --- !u!4 &966483257
 Transform:
@@ -2247,6 +2247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5917434619767833233, guid: 99dfd5c2c9425f141a303867a6960c18,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.400024
       objectReference: {fileID: 0}
     - target: {fileID: 5917434620397517451, guid: 99dfd5c2c9425f141a303867a6960c18,
         type: 3}

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    private int Damage = 0;
+    private int Damage = 20;
     void OnTriggerEnter2D(Collider2D other)
     {
         EnemyStats enemy = other.GetComponent<EnemyStats>();
         if (enemy != null)
         {
             enemy.TakeDamage(Damage);
+            Destroy(gameObject);
         }
     }
     //For each projectile override this method with stats, etc.
