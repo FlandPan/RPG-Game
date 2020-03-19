@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6608909216704976794}
   - component: {fileID: 6608909216704976792}
   - component: {fileID: -435959573222151454}
-  - component: {fileID: 5293229230531565662}
+  - component: {fileID: 3003428863598499739}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Girl Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: f602722862c48a24c9d52aff793c49e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be97e6bc6c06ee34da2cf9e0a9359abb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,18 +138,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09919071, y: 0.010328531}
+  m_Offset: {x: -0.033247888, y: 0.053337574}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 3.88}
+    oldSize: {x: 2.46, y: 4}
     newSize: {x: 2.8, y: 2.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9598699, y: 3.8930078}
+  m_Size: {x: 2.3396516, y: 3.9279308}
   m_EdgeRadius: 0
 --- !u!50 &6608909216704976792
 Rigidbody2D:
@@ -189,7 +189,7 @@ MonoBehaviour:
   firePrefab: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
     type: 3}
   bulletForce: 15
---- !u!114 &5293229230531565662
+--- !u!114 &3003428863598499739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,6 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520a43237b726514f8ce260541934321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage: 20
+  maxHealth: 150
+  damage: 10
   armor: 10
