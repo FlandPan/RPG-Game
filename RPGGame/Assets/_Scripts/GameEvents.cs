@@ -13,10 +13,17 @@ public class GameEvents : MonoBehaviour
     }
 
     public event Action<int> OnPlayerDamage;
+    public event Action OnPlayerDeath;
 
     public void PlayerGetsDamaged(int hp){
         if (OnPlayerDamage != null){
             OnPlayerDamage(hp);
+        }
+    }
+
+    public void PlayerDied(){
+        if (OnPlayerDeath != null){
+            OnPlayerDeath();
         }
     }
 }

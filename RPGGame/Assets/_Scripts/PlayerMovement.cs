@@ -11,19 +11,32 @@ public class PlayerMovement : MonoBehaviour
     public float leftBound;
     public float rightBound;
     public Vector3 movement;
+    private bool _inputEnabled;
 
+
+    void Start()
+    {
+        _inputEnabled = true;
+        GameEvents.current.OnPlayerDeath += DisableInputs;
+    }
+
+    public void DisableInputs(){
+        _inputEnabled = false;
+        movement = Vector2.zero;
+    }
 
     void Update()
     {
         //Inputs
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
+        if (_inputEnabled){
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) && _inputEnabled){
             Blink(movement);
         }
     }

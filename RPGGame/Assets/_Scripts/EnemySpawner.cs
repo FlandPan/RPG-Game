@@ -8,11 +8,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     private bool check = false;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

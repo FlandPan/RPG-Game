@@ -2,20 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snakeProjectile : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
+public class SnakeProjectile : MonoBehaviour
+{    
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject == PlayerSingleton.player){

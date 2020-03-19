@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snakeScript : MonoBehaviour
+public class SnakeScript : MonoBehaviour
 {
     //********************************SNAKE MOVEMENT****************************************8
     public GameObject snake;

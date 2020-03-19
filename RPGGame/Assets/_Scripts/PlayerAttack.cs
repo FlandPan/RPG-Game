@@ -9,32 +9,42 @@ public class PlayerAttack : MonoBehaviour
 
     public float bulletForce = 15f;
     public static int weaponChoice=0;
-    private int shootAttSpd =0;
-    private int burnAttSpd =0;
-
+    private int _shootAttSpd =0;
+    private int _burnAttSpd =0;
+    private bool _inputEnabled;
+    
+    void Awake()
+    {
+        GameEvents.current.OnPlayerDeath += DisableInput;
+        _inputEnabled = true;
+    }
+    public void DisableInput(){
+        _inputEnabled = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(shootAttSpd!=0)
-        {
-        shootAttSpd--;
-        }
-        if(burnAttSpd!=0)
-        {
-        burnAttSpd--;
-        }
-        
-        if(weaponChoice == 0 && Input.GetButtonDown("Fire1") && shootAttSpd == 0)
-        {
-            Shoot();
-            shootAttSpd = 50;
-        }
-        if(weaponChoice == 1 && Input.GetButtonDown("Fire1") && burnAttSpd == 0)
-        {
-            Burn();
-            burnAttSpd = 100;
+        if (_inputEnabled){
+            if(_shootAttSpd!=0)
+            {
+            _shootAttSpd--;
+            }
+            if(_burnAttSpd!=0)
+            {
+            _burnAttSpd--;
+            }
+            
+            if(weaponChoice == 0 && Input.GetButtonDown("Fire1") && _shootAttSpd == 0)
+            {
+                Shoot();
+                _shootAttSpd = 50;
+            }
+            if(weaponChoice == 1 && Input.GetButtonDown("Fire1") && _burnAttSpd == 0)
+            {
+                Burn();
+                _burnAttSpd = 100;
+            }
         }
     }
     void Shoot(){
