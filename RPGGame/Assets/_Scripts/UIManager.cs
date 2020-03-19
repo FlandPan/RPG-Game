@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class UIManager : MonoBehaviour
+public class UIManager : PlayerStats
 {
     private Text _timer;
     private Text _healthText;
-    public int _hp;
+    public int _hp = playerHealth;
     public Text PortalText;
     void Start()
     {
         GameEvents.current.OnPlayerDamage += DecreaseHealth;
-        _hp = PlayerSingleton.player.GetComponent<PlayerStats>().maxHealth;
+        _hp = PlayerSingleton.player.GetComponent<PlayerStats>().playerHealth;
         _timer = GameObject.Find("Timer").GetComponent<Text>();
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));

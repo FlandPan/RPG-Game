@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-   public int maxHealth;
-   public int damage;
+   public static int playerHealth = 100;
+   public int pDamage;
    public int armor;
 
-    void Awake()
+    public void TakePDamage(int damage)
     {
+        playerHealth -= damage;
 
+        if (playerHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
