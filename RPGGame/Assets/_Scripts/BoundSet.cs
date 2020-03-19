@@ -12,5 +12,9 @@ public class BoundSet : MonoBehaviour
             GameObject player = PlayerSingleton.player;
             player.GetComponent<PlayerMovement>().SetBounds(6,-8,-10,10);
         }
+        if (SceneManager.GetActiveScene().name == "Data and Algo"){
+            GameObject player = PlayerSingleton.player;
+            player.GetComponent<PlayerMovement>().SetBounds(10,-6,-18,6);
+        }
     }
 }
