@@ -189,6 +189,7 @@ MonoBehaviour:
   firePrefab: {fileID: 2031511858978719928, guid: f43c06933f6acf045bd388a91e3d76a6,
     type: 3}
   bulletForce: 15
+  weaponChoice: 1
 --- !u!114 &3003428863598499739
 MonoBehaviour:
   m_ObjectHideFlags: 0

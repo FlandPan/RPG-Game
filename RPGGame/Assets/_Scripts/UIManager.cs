@@ -7,11 +7,12 @@ public class UIManager : MonoBehaviour
 {
     private Text _timer;
     private Text _healthText;
-    public int _hp = 100;
+    public int _hp;
     public Text PortalText;
     void Start()
     {
         GameEvents.current.OnPlayerDamage += DecreaseHealth;
+        _hp = PlayerSingleton.player.GetComponent<PlayerStats>().maxHealth;
         _timer = GameObject.Find("Timer").GetComponent<Text>();
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));

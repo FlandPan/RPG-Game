@@ -6,19 +6,18 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject boy;
     public GameObject girl;
-    private GameObject _player;
-
-    void Start() {
-        _player = PlayerSingleton.player;
-    }
 
     public void switchBoy() {
-        _player = boy;
+        PlayerSingleton.player = boy;
+        Destroy(girl);
+        PlayerSingleton.ChosenType(boy);
         this.gameObject.SetActive(false);
     }
 
     public void switchGirl() {
-        _player = girl;
+        PlayerSingleton.player = girl;
+        Destroy(boy);
+        PlayerSingleton.ChosenType(girl);
         this.gameObject.SetActive(false);
     }
 }

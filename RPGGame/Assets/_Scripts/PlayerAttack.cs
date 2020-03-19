@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject firePrefab;
 
     public float bulletForce = 15f;
-    public static int weaponChoice = 0;
+    public int weaponChoice = 0;
     private int _shootAttSpd = 0;
     private int _burnAttSpd = 0;
     private bool _inputEnabled;

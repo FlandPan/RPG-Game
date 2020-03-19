@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 5917434620397517458}
   - component: {fileID: 5917434620397517459}
   - component: {fileID: 6217227873730141164}
+  - component: {fileID: 6540629681468919446}
   m_Layer: 5
   m_Name: UI
   m_TagString: UI
@@ -569,6 +570,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 5917434619869340972}
   deathScreen: {fileID: 4694005517074271503}
+--- !u!114 &6540629681468919446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917434620397517451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cfa893620bb984c8a3a540ad37f5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5917434620597321390
 GameObject:
   m_ObjectHideFlags: 0
