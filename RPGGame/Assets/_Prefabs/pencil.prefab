@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4929891955729843151}
   - component: {fileID: 7327583771691410971}
   - component: {fileID: 7646111209893075989}
-  - component: {fileID: 1640941442004988293}
+  - component: {fileID: 7324029235141196128}
   m_Layer: 0
   m_Name: pencil
   m_TagString: Attack
@@ -99,7 +99,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1640941442004988293
+--- !u!114 &7324029235141196128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

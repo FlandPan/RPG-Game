@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    private int Damage = 0;
+    private int Damage = 20;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == PlayerSingleton.player){
