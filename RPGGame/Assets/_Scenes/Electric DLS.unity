@@ -9115,7 +9115,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 387760532605313757, guid: 81f0b884c26f067488d4032b3f21f050, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81f0b884c26f067488d4032b3f21f050, type: 3}
 --- !u!1 &1111920771852678067 stripped
 GameObject:
@@ -9136,7 +9137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-  deathEffect: {fileID: 0}
 --- !u!1001 &3719704447115147484
 PrefabInstance:
   m_ObjectHideFlags: 0
