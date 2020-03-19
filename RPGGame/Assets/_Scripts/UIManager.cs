@@ -7,7 +7,7 @@ public class UIManager : PlayerStats
 {
     private Text _timer;
     private Text _healthText;
-    public int _hp = playerHealth;
+    public int _hp = 1;
     public Text PortalText;
     void Start()
     {
