@@ -27,6 +27,9 @@ public class UIManager : PlayerStats
         if(_hp >= hp){
             _hp -= hp;
         }
+        else{
+            _hp = 0;
+        }
     }
     public void Display(string location){
         PortalText.enabled = true;
