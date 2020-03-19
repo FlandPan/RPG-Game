@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void DisableInputs(){
+        Debug.Log("Disabled");
         _inputEnabled = false;
         movement = Vector2.zero;
     }

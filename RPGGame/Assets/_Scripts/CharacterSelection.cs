@@ -7,19 +7,28 @@ public class CharacterSelection : MonoBehaviour
     public GameObject boy;
     public GameObject girl;
 
-    public void switchBoy() {
+    public void SwitchBoy() {
         PlayerSingleton.player = boy;
         Destroy(girl);
         PlayerSingleton.ChosenType(boy);
         DontDestroyOnLoad(boy);
         this.gameObject.SetActive(false);
+        CheckDuplicates();
     }
 
-    public void switchGirl() {
+    public void SwitchGirl() {
         PlayerSingleton.player = girl;
         Destroy(boy);
         PlayerSingleton.ChosenType(girl);
         DontDestroyOnLoad(girl);
         this.gameObject.SetActive(false);
+        CheckDuplicates();
+    }
+    
+    public void CheckDuplicates(){
+        GameObject[] dups = GameObject.FindGameObjectsWithTag("Player");
+        if (dups.Length > 1){
+            Destroy(dups[0]);
+        }
     }
 }

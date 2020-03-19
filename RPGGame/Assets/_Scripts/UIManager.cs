@@ -14,7 +14,6 @@ public class UIManager : PlayerStats
         GameEvents.current.OnPlayerDamage += DecreaseHealth;
         _timer = GameObject.Find("Timer").GetComponent<Text>();
         _hp = PlayerSingleton.player.GetComponent<PlayerStats>().playerHealth;
-        Debug.Log(PlayerSingleton.player.name);
         _healthText = GameObject.Find("Health").GetComponent<Text>();
         Timer.StartCountDown(new System.TimeSpan(0,2,0));
         PortalText.enabled = false;

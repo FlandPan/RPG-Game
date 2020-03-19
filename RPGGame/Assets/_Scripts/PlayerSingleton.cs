@@ -15,8 +15,6 @@ public class PlayerSingleton : MonoBehaviour
         }
     }
     public static void ChosenType(GameObject type){
-        Debug.Log(type.name + " Chosen");
         player = type;
-        Debug.Log(player.name);
     }
 }
