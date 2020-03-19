@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,6 +19,19 @@ public class PlayerMovement : MonoBehaviour
     {
         _inputEnabled = true;
         GameEvents.current.OnPlayerDeath += DisableInputs;
+        if (SceneManager.GetActiveScene().name == "Electric DLS"){
+            Debug.Log("Yes");
+            upperBound = 6;
+            lowerBound = -8;
+            leftBound = -10;
+            rightBound = 10;
+        }
+    }
+    public void SetBounds(params int[] bounds){
+        upperBound = bounds[0];
+        lowerBound = bounds[1];
+        leftBound = bounds[2];
+        rightBound = bounds[3];
     }
 
     public void DisableInputs(){

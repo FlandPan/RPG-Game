@@ -518,6 +518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576c0612fffb8b3468e852ed5f3ba19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 100
+  pDamage: 0
+  armor: 0
   _hp: 100
   PortalText: {fileID: 3500076215014915547}
 --- !u!114 &5917434620397517453
@@ -579,7 +582,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5917434620397517451}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cfa893620bb984c8a3a540ad37f5ee, type: 3}
+  m_Script: {fileID: 11500000, guid: db7ef782619f78842adde0ecee441cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5917434620597321390
