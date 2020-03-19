@@ -6,6 +6,8 @@ public class EnemyStats : MonoBehaviour
 {
     public int enemyHealth = 100;
 
+    public int enemyDamage = 5;
+
     public GameObject deathEffect;
 
     public void TakeDamage(int damage){
@@ -18,5 +20,13 @@ public class EnemyStats : MonoBehaviour
 
     void Die(){
         Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GameEvents.current.PlayerGetsDamaged(1);
+        }
     }
 }

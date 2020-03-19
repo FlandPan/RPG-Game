@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class UIManager : MonoBehaviour
+public class UIManager : PlayerStats
 {
     private Text _timer;
     private Text _healthText;
-    public int _hp = 100;
+    public int _hp = playerHealth;
     public Text PortalText;
     void Start()
     {
