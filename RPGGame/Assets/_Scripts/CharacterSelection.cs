@@ -16,7 +16,7 @@ public class CharacterSelection : MonoBehaviour
         Destroy(girl);
         PlayerSingleton.ChosenType(boy);
         DontDestroyOnLoad(boy);
-        boy.GetComponent<PlayerMovement>().SetEvent();
+        //boy.GetComponent<PlayerMovement>().SetEvent();
         this.gameObject.SetActive(false);
         CheckDuplicates(1);
     }
@@ -26,7 +26,7 @@ public class CharacterSelection : MonoBehaviour
         Destroy(boy);
         PlayerSingleton.ChosenType(girl);
         DontDestroyOnLoad(girl);
-        girl.GetComponent<PlayerMovement>().SetEvent();
+        //girl.GetComponent<PlayerMovement>().SetEvent();
         this.gameObject.SetActive(false);
         CheckDuplicates(1);
     }

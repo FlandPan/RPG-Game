@@ -14,6 +14,7 @@ public class GameEvents : MonoBehaviour
 
     public event Action<int> OnPlayerDamage;
     public event Action OnPlayerDeath;
+    public event Action OnEnemyDeath;
 
     public void PlayerGetsDamaged(int hp){
         if (OnPlayerDamage != null){
@@ -25,6 +26,12 @@ public class GameEvents : MonoBehaviour
         if (OnPlayerDeath != null){
             Debug.Log("Buddy");
             OnPlayerDeath();
+        }
+    }
+    
+    public void EnemyDied(){
+        if (OnEnemyDeath != null){
+
         }
     }
 }

@@ -13,14 +13,19 @@ public class PlayerMovement : MonoBehaviour
     public float rightBound;
     public Vector3 movement;
     private bool _inputEnabled;
+    public bool eventSet;
 
     void Awake()
     {
         _inputEnabled = true;
+        SetEvent();
     }
     public void SetEvent(){
-        Debug.Log("Yes");
-        GameEvents.current.OnPlayerDeath += DisableInputs;
+        eventSet = true;
+        GameEvents.current.OnPlayerDeath += Test;
+    }
+    public void Test(){
+        Debug.Log("Testing");
     }
     public void SetBounds(params int[] bounds){
         upperBound = bounds[0];
@@ -30,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void DisableInputs(){
-        Debug.Log("Disabled");
         _inputEnabled = false;
         movement = Vector2.zero;
     }
