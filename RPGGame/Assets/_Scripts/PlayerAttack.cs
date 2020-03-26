@@ -34,37 +34,93 @@ public class PlayerAttack : MonoBehaviour
             {
             _burnAttSpd--;
             }
-            
-            if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.Mouse0) && _shootAttSpd == 0)
-            {
-                Shoot();
-                _shootAttSpd = 100;
-            }
-            if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.Mouse0) && _burnAttSpd == 0)
-            {
-                Burn();
-                _burnAttSpd = 100;
-            }
+            /////////////////////////////Projectile Shooting/////////////////////////////////
+                if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.J) && _shootAttSpd == 0)
+                {
+                    Shoot("left");
+                    _shootAttSpd = 100;
+                }
+                else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.I) && _shootAttSpd == 0)
+                {
+                    Shoot("up");
+                    _shootAttSpd = 100;
+                }
+                else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.L) && _shootAttSpd == 0)
+                {
+                    Shoot("right");
+                    _shootAttSpd = 100;
+                }
+                else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.K) && _shootAttSpd == 0)
+                {
+                    Shoot("down");
+                    _shootAttSpd = 100;
+                }
+            //////////////////////////////Fire Shooting//////////////////////////////////////
+                if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.J) && _burnAttSpd == 0)
+                {
+                    Burn("left");
+                    _burnAttSpd = 100;
+                }
+                else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.I) && _burnAttSpd == 0)
+                {
+                    Burn("up");
+                    _burnAttSpd = 100;
+                }
+                else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.L) && _burnAttSpd == 0)
+                {
+                    Burn("right");
+                    _burnAttSpd = 100;
+                }
+                else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.K) && _burnAttSpd == 0)
+                {
+                    Burn("down");
+                    _burnAttSpd = 100;
+                }
         }
     }
-    void Shoot(){
+    void Shoot(string direction){
             PlayerMovement pm = GetComponent<PlayerMovement>();
-            Quaternion newRotation = new Quaternion();
-            float rotation = Mathf.Abs(pm.movement.x)*(180 + pm.movement.x * -90) + pm.movement.y*(90 + pm.movement.y*90);
-            newRotation = Quaternion.Euler(0,0,rotation);
-            GameObject projectile = Instantiate(projectilePrefab,transform.position,newRotation);
-            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-            Vector3 temp = (pm.movement.x ==0 && pm.movement.y ==0)?new Vector3(0,-1,0):pm.movement;
-            rb.AddForce(Vector3.Scale(new Vector3(1,1,0),temp) * bulletForce,ForceMode2D.Impulse);
+            if(direction == "left")
+            {
+                Quaternion rotate = Quaternion.Euler(0,0,-90);
+                GameObject projectile = Instantiate(projectilePrefab,transform.position, rotate);
+                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                rb.AddForce((new Vector3(-1,0,0)) * bulletForce,ForceMode2D.Impulse);
+            }
+            else if(direction == "right")
+            {
+                Quaternion rotate = Quaternion.Euler(0,0,90);
+                GameObject projectile = Instantiate(projectilePrefab,transform.position, rotate);
+                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                rb.AddForce((new Vector3(1,0,0)) * bulletForce,ForceMode2D.Impulse);
+            }
+            else if(direction == "up")
+            {
+                Quaternion rotate = Quaternion.Euler(0,0,0);
+                GameObject projectile = Instantiate(projectilePrefab,transform.position, rotate);
+                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                rb.AddForce((new Vector3(0,1,0)) * bulletForce,ForceMode2D.Impulse);
+            }
+            else
+            {
+                Quaternion rotate = Quaternion.Euler(0,0,180);
+                GameObject projectile = Instantiate(projectilePrefab,transform.position, rotate);
+                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                rb.AddForce((new Vector3(0,-1,0)) * bulletForce,ForceMode2D.Impulse);
+            }
     }
-        void Burn()
+        void Burn(string direction)
         {
             PlayerMovement pm = GetComponent<PlayerMovement>();
             GameObject fire = Instantiate(firePrefab);
-            Vector3 newPos = new Vector3(2,2,0);
-            Vector3 temp = (pm.movement.x ==0 && pm.movement.y ==0)?new Vector3(0,-1,0):pm.movement;
-            newPos = Vector3.Scale(newPos,temp);
-            fire.transform.position = transform.position + newPos;
+            if(direction == "left")
+            fire.transform.position = transform.position + new Vector3(-2,0,0);
+            else if(direction == "right")
+            fire.transform.position = transform.position + new Vector3(2,0,0);
+            else if(direction == "up")
+            fire.transform.position = transform.position + new Vector3(0,2,0);
+            else
+            fire.transform.position = transform.position + new Vector3(0,-2,0);
         }
         public void setWeaponChoice(int x)
         {
