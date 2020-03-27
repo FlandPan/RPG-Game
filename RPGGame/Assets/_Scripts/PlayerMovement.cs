@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _inputEnabled = true;
         eventSet = true;
-        GameEvents.current.OnPlayerDeath += DisableInputs;
-        Debug.Log("Awake");
     }
     public void SetBounds(params int[] bounds){
         upperBound = bounds[0];
@@ -30,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void DisableInputs(){
-        Debug.Log("Disabled");
         _inputEnabled = false;
         movement = Vector2.zero;
     }

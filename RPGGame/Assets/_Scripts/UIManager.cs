@@ -24,6 +24,8 @@ public class UIManager : PlayerStats
         _healthText.text = "HP: " + _hp;
         if (_hp == 0){
             GameEvents.current.PlayerDied();
+            PlayerSingleton.player.GetComponent<PlayerMovement>().DisableInputs();
+            PlayerSingleton.player.GetComponent<PlayerAttack>().DisableInput();
         }
     }
     private void DecreaseHealth(int hp){
