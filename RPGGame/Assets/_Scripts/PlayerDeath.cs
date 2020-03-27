@@ -11,12 +11,11 @@ public class PlayerDeath : MonoBehaviour
     public void Restart(){
         SceneManager.LoadScene("Hub");
     }
-    void Update()
+    void Awake()
     {
-        int hp = System.Int32.Parse(healthText.text.Split(' ')[1]);
-        if (hp <= 0){
-            deathScreen.SetActive(true);
-            GameEvents.current.PlayerDied();
-        }
+        GameEvents.current.OnPlayerDeath += Death;
+    }
+    public void Death(){
+        deathScreen.SetActive(true);
     }
 }

@@ -24,10 +24,10 @@ public class GameEvents : MonoBehaviour
 
     public void PlayerDied(){
         if (OnPlayerDeath != null){
-            Debug.Log("Buddy");
             OnPlayerDeath();
         }
     }
+
     
     public void EnemyDied(){
         if (OnEnemyDeath != null){

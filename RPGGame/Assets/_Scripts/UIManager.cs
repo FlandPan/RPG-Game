@@ -22,6 +22,9 @@ public class UIManager : PlayerStats
     {
         _timer.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
         _healthText.text = "HP: " + _hp;
+        if (_hp == 0){
+            GameEvents.current.PlayerDied();
+        }
     }
     private void DecreaseHealth(int hp){
         if(_hp >= hp){

@@ -8,8 +8,6 @@ public class EnemyStats : MonoBehaviour
 
     public int enemyDamage;
 
-    public GameObject deathEffect;
-
     public void TakeDamage(int damage){
         enemyHealth -= damage;
 

@@ -8240,7 +8240,7 @@ Transform:
   m_LocalScale: {x: 12.77, y: 11.68, z: 7.3154}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1844484935 stripped
 Transform:
@@ -8301,7 +8301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1953304386 stripped
 Transform:
@@ -9065,7 +9065,7 @@ PrefabInstance:
     - target: {fileID: 1111920772908001057, guid: 81f0b884c26f067488d4032b3f21f050,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1111920772908001057, guid: 81f0b884c26f067488d4032b3f21f050,
         type: 3}
@@ -9110,7 +9110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 100
   enemyDamage: 5
-  deathEffect: {fileID: 0}
 --- !u!1001 &3719704447115147484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9275,7 +9274,7 @@ PrefabInstance:
     - target: {fileID: 5917434620397517452, guid: 99dfd5c2c9425f141a303867a6960c18,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5917434620397517452, guid: 99dfd5c2c9425f141a303867a6960c18,
         type: 3}
