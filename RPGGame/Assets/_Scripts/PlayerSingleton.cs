@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSingleton : MonoBehaviour
 {
     public static GameObject player;
-    public static void Awake()
+    public void Awake()
     {
         if (player == null){
             player = GameObject.FindGameObjectWithTag("Player");
