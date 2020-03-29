@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private int _burnAttSpd = 0;
     private int _maxBurnSpd = 100;
     private int _boltAttSpd = 0;
-    private int _maxBoltSpd = 1;
+    private int _maxBoltSpd = 10;
     private bool _inputEnabled;
     
     void Start()
@@ -42,75 +42,85 @@ public class PlayerAttack : MonoBehaviour
             if(_boltAttSpd != 0){
                 _boltAttSpd --;
             }
+            string shootDirection = "";
+            bool pressed = false;
             //Left shoot
             if (Input.GetKeyDown(KeyCode.J)){
-                switch(weaponChoice){
-                    case 0:
-                        Shoot("left");
-                        _shootAttSpd = _maxShootSpd;
-                        break;
-                    case 1:
-                        Burn("left");
-                        _burnAttSpd = _maxBurnSpd;
-                        break;
-                }
-
+                shootDirection = "left";
+                pressed = true;
             }
             //Down shoot
             if (Input.GetKeyDown(KeyCode.K)){
-
+                shootDirection = "down";
+                pressed = true;
             }
             //Up shoot
             if (Input.GetKeyDown(KeyCode.I)){
-
+                shootDirection = "up";
+                pressed = true;
             }
             //Right shoot
             if (Input.GetKeyDown(KeyCode.L)){
-
+                shootDirection = "right";
+                pressed = true;
+            }
+            if (pressed){
+                if (weaponChoice == 0 && _shootAttSpd == 0){
+                    Shoot(shootDirection);
+                    _shootAttSpd = _maxShootSpd;
+                }
+                else if (weaponChoice == 1 && _burnAttSpd == 0){
+                    Burn(shootDirection);
+                    _burnAttSpd = _maxBurnSpd;
+                }
+                else if (weaponChoice == 2 && _boltAttSpd == 0){
+                    Bolt(shootDirection);
+                    _boltAttSpd = _maxBoltSpd;
+                }
             }
             /////////////////////////////Bolt Shooting///////////////////////////////////////
             /////////////////////////////Projectile Shooting/////////////////////////////////
-                if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.J) && _shootAttSpd == 0)
-                {
-                    Shoot("left");
-                    _shootAttSpd = 100;
-                }
-                else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.I) && _shootAttSpd == 0)
-                {
-                    Shoot("up");
-                    _shootAttSpd = 100;
-                }
-                else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.L) && _shootAttSpd == 0)
-                {
-                    Shoot("right");
-                    _shootAttSpd = 100;
-                }
-                else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.K) && _shootAttSpd == 0)
-                {
-                    Shoot("down");
-                    _shootAttSpd = 100;
-                }
-            //////////////////////////////Fire Shooting//////////////////////////////////////
-                if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.J) && _burnAttSpd == 0)
-                {
-                    Burn("left");
-                    _burnAttSpd = 100;
-                }
-                else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.I) && _burnAttSpd == 0)
-                {
-                    Burn("up");
-                    _burnAttSpd = 100;
-                }
-                else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.L) && _burnAttSpd == 0)
-                {
-                    Burn("right");
-                    _burnAttSpd = 100;
-                }
-                else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.K) && _burnAttSpd == 0)
-                {
-                    Burn("down");
-                    _burnAttSpd = 100;
-                }
+            //     if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.J) && _shootAttSpd == 0)
+            //     {
+            //         Shoot("left");
+            //         _shootAttSpd = 100;
+            //     }
+            //     else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.I) && _shootAttSpd == 0)
+            //     {
+            //         Shoot("up");
+            //         _shootAttSpd = 100;
+            //     }
+            //     else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.L) && _shootAttSpd == 0)
+            //     {
+            //         Shoot("right");
+            //         _shootAttSpd = 100;
+            //     }
+            //     else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.K) && _shootAttSpd == 0)
+            //     {
+            //         Shoot("down");
+            //         _shootAttSpd = 100;
+            //     }
+            // //////////////////////////////Fire Shooting//////////////////////////////////////
+            //     if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.J) && _burnAttSpd == 0)
+            //     {
+            //         Burn("left");
+            //         _burnAttSpd = 100;
+            //     }
+            //     else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.I) && _burnAttSpd == 0)
+            //     {
+            //         Burn("up");
+            //         _burnAttSpd = 100;
+            //     }
+            //     else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.L) && _burnAttSpd == 0)
+            //     {
+            //         Burn("right");
+            //         _burnAttSpd = 100;
+            //     }
+            //     else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.K) && _burnAttSpd == 0)
+            //     {
+            //         Burn("down");
+            //         _burnAttSpd = 100;
+            //     }
         }
     }
     void Shoot(string direction){

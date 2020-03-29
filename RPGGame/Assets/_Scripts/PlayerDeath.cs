@@ -11,7 +11,7 @@ public class PlayerDeath : MonoBehaviour
     public void Restart(){
         SceneManager.LoadScene("Hub");
     }
-    void Awake()
+    void Start()
     {
         GameEvents.current.OnPlayerDeath += Death;
     }
