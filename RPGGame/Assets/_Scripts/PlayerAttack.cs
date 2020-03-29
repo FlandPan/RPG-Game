@@ -6,11 +6,16 @@ public class PlayerAttack : MonoBehaviour
 {
     public GameObject projectilePrefab;    
     public GameObject firePrefab;
+    public GameObject boltPrefab;
 
     public float bulletForce = 15f;
     public int weaponChoice = 0;
     private int _shootAttSpd = 0;
+    private int _maxShootSpd = 100;
     private int _burnAttSpd = 0;
+    private int _maxBurnSpd = 100;
+    private int _boltAttSpd = 0;
+    private int _maxBoltSpd = 1;
     private bool _inputEnabled;
     
     void Start()
@@ -34,6 +39,36 @@ public class PlayerAttack : MonoBehaviour
             {
             _burnAttSpd--;
             }
+            if(_boltAttSpd != 0){
+                _boltAttSpd --;
+            }
+            //Left shoot
+            if (Input.GetKeyDown(KeyCode.J)){
+                switch(weaponChoice){
+                    case 0:
+                        Shoot("left");
+                        _shootAttSpd = _maxShootSpd;
+                        break;
+                    case 1:
+                        Burn("left");
+                        _burnAttSpd = _maxBurnSpd;
+                        break;
+                }
+
+            }
+            //Down shoot
+            if (Input.GetKeyDown(KeyCode.K)){
+
+            }
+            //Up shoot
+            if (Input.GetKeyDown(KeyCode.I)){
+
+            }
+            //Right shoot
+            if (Input.GetKeyDown(KeyCode.L)){
+
+            }
+            /////////////////////////////Bolt Shooting///////////////////////////////////////
             /////////////////////////////Projectile Shooting/////////////////////////////////
                 if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.J) && _shootAttSpd == 0)
                 {
@@ -109,21 +144,46 @@ public class PlayerAttack : MonoBehaviour
                 rb.AddForce((new Vector3(0,-1,0)) * bulletForce,ForceMode2D.Impulse);
             }
     }
-        void Burn(string direction)
+    void Burn(string direction)
+    {
+        PlayerMovement pm = GetComponent<PlayerMovement>();
+        GameObject fire = Instantiate(firePrefab);
+        if(direction == "left")
+        fire.transform.position = transform.position + new Vector3(-2,0,0);
+        else if(direction == "right")
+        fire.transform.position = transform.position + new Vector3(2,0,0);
+        else if(direction == "up")
+        fire.transform.position = transform.position + new Vector3(0,2,0);
+        else
+        fire.transform.position = transform.position + new Vector3(0,-2,0);
+    }
+    public void setWeaponChoice(int x)
+    {
+        weaponChoice = x;
+    }
+    public void Bolt(string direction){
+        Quaternion rotate = new Quaternion();
+        Vector2 side = new Vector2();
+        switch (direction)
         {
-            PlayerMovement pm = GetComponent<PlayerMovement>();
-            GameObject fire = Instantiate(firePrefab);
-            if(direction == "left")
-            fire.transform.position = transform.position + new Vector3(-2,0,0);
-            else if(direction == "right")
-            fire.transform.position = transform.position + new Vector3(2,0,0);
-            else if(direction == "up")
-            fire.transform.position = transform.position + new Vector3(0,2,0);
-            else
-            fire.transform.position = transform.position + new Vector3(0,-2,0);
+            case "up":
+                rotate = Quaternion.Euler(0,0,0);
+                side = Vector2.up;
+                break;
+            case "down":
+                rotate = Quaternion.Euler(0,0,180);
+                side = Vector2.down;
+                break;
+            case "left":
+                rotate = Quaternion.Euler(0,0,90);
+                side = Vector2.left;
+                break;
+            case "right":
+                rotate = Quaternion.Euler(0,0,270);
+                side = Vector2.right;
+                break;
         }
-        public void setWeaponChoice(int x)
-        {
-            weaponChoice = x;
-        }
+        GameObject firedProj = Instantiate(boltPrefab,transform.position,rotate);
+        firedProj.GetComponent<Rigidbody2D>().AddForce(side*bulletForce,ForceMode2D.Impulse);
+    }
 }
