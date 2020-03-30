@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class UIManager : PlayerStats
+public class UIManager : MonoBehaviour
 {
     private Text _timer;
     private Text _healthText;

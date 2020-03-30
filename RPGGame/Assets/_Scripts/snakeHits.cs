@@ -7,7 +7,6 @@ public class snakeHits : MonoBehaviour
     private static int health = 50;
     void OnTriggerEnter2D(Collider2D other)
     {
-        
         health--;
     }
     void Update()

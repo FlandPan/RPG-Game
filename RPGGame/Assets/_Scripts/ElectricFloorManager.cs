@@ -28,6 +28,7 @@ public class ElectricFloorManager : MonoBehaviour
         bool check = CheckEnemies();
         if (check && this.gameObject.GetComponent<EnemySpawner>().done){
             winUI.SetActive(true);
+            GameEvents.current.LevelCompleted(1);
         }
     }
     private void ChangeColors(Color color, ElectricTile[] tiles, bool active){

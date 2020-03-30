@@ -8,7 +8,9 @@ public class snakeProjectile : MonoBehaviour
         
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Test");
         if (other.gameObject == PlayerSingleton.player){
+            Debug.Log(other.gameObject.name);
             GameEvents.current.PlayerGetsDamaged(Damage);
         }
     }
