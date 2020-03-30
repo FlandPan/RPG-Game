@@ -511,6 +511,7 @@ GameObject:
   - component: {fileID: 6217227873730141164}
   - component: {fileID: 6540629681468919446}
   - component: {fileID: 7046652445623505989}
+  - component: {fileID: 587391982331071225}
   m_Layer: 5
   m_Name: UI
   m_TagString: UI
@@ -664,6 +665,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 100
   PortalText: {fileID: 3500076215014915547}
+--- !u!114 &587391982331071225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917434620397517451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df963e8220fcd940bc90190862e0923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6764707194392437157
 GameObject:
   m_ObjectHideFlags: 0

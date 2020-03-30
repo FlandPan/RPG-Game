@@ -7,18 +7,19 @@ public class CoinLevelManager : MonoBehaviour
 {
     private int _totalCoins;
     private int _startTime;
-    public Text timer;
+    private Text _timer;
     private bool[] _completedLevels = new bool[9];
     void Awake()
     {
         GameEvents.current.OnLevelComplete += addCoins;
-        _startTime = System.Int32.Parse(timer.text.Split(' ')[1]);
+        _timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
+        _startTime = System.Int32.Parse(_timer.text.Split(' ')[1]);
     }
 
     public void addCoins(int index){
         //DLS room
         if (index == 1 && !_completedLevels[index]){
-            int currentTime = System.Int32.Parse(timer.text.Split(' ')[1]);
+            int currentTime = System.Int32.Parse(_timer.text.Split(' ')[1]);
             int deltaTime = _startTime-currentTime;
             if (deltaTime > 60){
                 _totalCoins += 5;
@@ -30,8 +31,15 @@ public class CoinLevelManager : MonoBehaviour
                 _totalCoins += 20;
             }
             _completedLevels[1] = true;
-            Debug.Log(deltaTime);
-            Debug.Log(_totalCoins);
         }
+    }
+    public bool canBuy(int num){
+        return _totalCoins >= num;
+    }
+    public void subtractCoins(int num){
+        _totalCoins -= num;
+    }
+    public int getCoins(){
+        return _totalCoins;
     }
 }
