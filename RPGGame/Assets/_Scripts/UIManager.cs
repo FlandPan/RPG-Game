@@ -5,22 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
-    private Text _timer;
     private Text _healthText;
     public int _hp = 1;
     public Text PortalText;
     void Start()
     {
         GameEvents.current.OnPlayerDamage += DecreaseHealth;
-        _timer = GameObject.Find("Timer").GetComponent<Text>();
         _hp = PlayerSingleton.player.GetComponent<PlayerStats>().playerHealth;
         _healthText = GameObject.Find("Health").GetComponent<Text>();
-        Timer.StartCountDown(new System.TimeSpan(0,2,0));
         PortalText.enabled = false;
     }
     void Update()
     {
-        _timer.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
         _healthText.text = "HP: " + _hp;
         if (_hp == 0){
             GameEvents.current.PlayerDied();
