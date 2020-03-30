@@ -23,8 +23,8 @@ public class bossScript : MonoBehaviour
 
         GameObject circleProj = Instantiate(addProj);
         circleProj.transform.position = transform.position;
-        RigidBody2D rb = circleProj.GetComponenet<RigidBody2D>();
-        rb.AddForce(_aimRoundVector,ForceMode2D.Impulse);
+        //RigidBody2D rb = circleProj.GetComponenet<RigidBody2D>();
+        //rb.AddForce(_aimRoundVector,ForceMode2D.Impulse);
 
 
 
