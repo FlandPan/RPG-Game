@@ -9,7 +9,7 @@ public class CoinLevelManager : MonoBehaviour
     private int _startTime;
     private Text _timer;
     private bool[] _completedLevels = new bool[9];
-    void Awake()
+    void Start()
     {
         GameEvents.current.OnLevelComplete += addCoins;
         _timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();

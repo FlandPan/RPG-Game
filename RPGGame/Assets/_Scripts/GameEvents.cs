@@ -16,6 +16,7 @@ public class GameEvents : MonoBehaviour
     public event Action OnPlayerDeath;
     public event Action OnEnemyDeath;
     public event Action<int> OnLevelComplete;
+    public event Action OnGameRestart;
 
     public void LevelCompleted(int index){
         if (OnLevelComplete != null){

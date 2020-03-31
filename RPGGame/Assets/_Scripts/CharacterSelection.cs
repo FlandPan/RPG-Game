@@ -6,10 +6,21 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject boy;
     public GameObject girl;
+    private static bool _display = true;
 
     void Start()
     {
-        CheckDuplicates(2);
+        if (_display){
+            CheckDuplicates(2);
+            _display = false;
+        }
+        else{
+            this.gameObject.SetActive(false);
+        }
+        GameEvents.current.OnPlayerDeath += SetDisplay;
+    }
+    public void SetDisplay(){
+        _display = true;
     }
     public void SwitchBoy() {
         PlayerSingleton.player = boy;
