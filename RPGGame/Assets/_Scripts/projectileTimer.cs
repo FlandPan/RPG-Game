@@ -13,7 +13,7 @@ public class projectileTimer : MonoBehaviour
     }
     IEnumerator e()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6);
         Destroy(this.gameObject);
     }
 

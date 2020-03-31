@@ -1812,9 +1812,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 993590464}
   addProj: {fileID: 2294956230523937705, guid: 81dd87c340bceee42990215f0d2fb60d, type: 3}
-  minusProj: {fileID: 0}
-  multProj: {fileID: 0}
-  divProj: {fileID: 0}
+  minusProj: {fileID: 6631106121965496725, guid: 76ea05f46d6be3d4c8591e9e7f7277e5,
+    type: 3}
+  multProj: {fileID: 8125494407339358805, guid: 8518e7486cae766448cd7a7e23b21e15,
+    type: 3}
+  divProj: {fileID: 4957299210984046796, guid: 866f37ad20f537a40bcea3008d6fa448, type: 3}
 --- !u!213 &1125393259
 Sprite:
   m_ObjectHideFlags: 0
