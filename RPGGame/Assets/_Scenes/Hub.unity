@@ -1500,7 +1500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Timer: '
+  m_Text: 'Timer: 0'
 --- !u!222 &1603723005
 CanvasRenderer:
   m_ObjectHideFlags: 0
