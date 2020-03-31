@@ -7,7 +7,6 @@ public class CharacterSelection : MonoBehaviour
     public GameObject boy;
     public GameObject girl;
     private static bool _display = true;
-
     void Start()
     {
         if (_display){

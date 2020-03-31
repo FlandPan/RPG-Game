@@ -10,6 +10,7 @@ public class PlayerDeath : MonoBehaviour
     public GameObject deathScreen;
     public void Restart(){
         SceneManager.LoadScene("Hub");
+        Destroy(PlayerSingleton.player);
     }
     void Start()
     {

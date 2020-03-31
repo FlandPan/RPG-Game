@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour
 {
     private Text _timerText;
-    private bool _gameRestarted;
+    private static bool _gameRestarted;
     public GameObject canvas;
     void Awake()
     {

@@ -7,19 +7,17 @@ public class CoinLevelManager : MonoBehaviour
 {
     private int _totalCoins;
     private int _startTime;
-    private Text _timer;
     private bool[] _completedLevels = new bool[9];
     void Start()
     {
         GameEvents.current.OnLevelComplete += addCoins;
-        _timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
-        _startTime = System.Int32.Parse(_timer.text.Split(' ')[1]);
+        _startTime = (int)Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
     }
 
     public void addCoins(int index){
         //DLS room
         if (index == 1 && !_completedLevels[index]){
-            int currentTime = System.Int32.Parse(_timer.text.Split(' ')[1]);
+            int currentTime = (int)Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
             int deltaTime = _startTime-currentTime;
             if (deltaTime > 60){
                 _totalCoins += 5;
