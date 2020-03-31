@@ -12,25 +12,115 @@ public class bossScript : MonoBehaviour
     private Vector3 _aimVector;
     private Vector3 _aimRoundVector;
     private int _roundCount = 0;
+    private int chooser = 3;
+    private bool counterClockwise = false;
+    private GameObject projectilePrefab;
+    private int projectileCounter=0;
+    private int hardMode = 1;
+        private GameObject [] projectiles = new GameObject [4];
 
     // Update is called once per frame
+    void Start() {
+
+        projectiles[0] = addProj;
+        projectiles[1] = minusProj;
+        projectiles[2] = multProj;
+        projectiles[3] = divProj;
+        projectilePrefab = projectiles[projectileCounter];
+
+    }
     void Update()
     {
-
-        _aimRoundVector = new Vector3(5*Mathf.Sin(_roundCount%360),5*Mathf.Cos(_roundCount%360),0);
-
-        _roundCount++;
-
-        GameObject circleProj = Instantiate(addProj);
-        circleProj.transform.position = transform.position;
-        //RigidBody2D rb = circleProj.GetComponenet<RigidBody2D>();
-        //rb.AddForce(_aimRoundVector,ForceMode2D.Impulse);
-
-
-
+        /***************ATTACK PATTERN 1 SPIRAL PROJECTILES**************************/
+        if(Time.frameCount%(250)==0)
+        {
+            projectileCounter++;
+            if(projectileCounter==4)
+            {
+                projectileCounter=0;
+            }
+            projectilePrefab=projectiles[projectileCounter];
+            chooser = Random.Range(1,4);
+            if(Random.Range(0,2)==1)
+            {
+                counterClockwise = true;
+            }
+            else
+            {
+                counterClockwise = false;
+            }
+        }
+        if(Time.frameCount%(4/hardMode)==0)
+        {
+            spiralProjectiles(chooser,counterClockwise);
+        }
+        
+        /*******************ATTACK PATTERN 2 SPORATIC DIRECT HITS****************
+        if(Time.frameCount%20==0)
+        {
+            randomDirectProjectile();
+        }
+        */
     }
     float unitVector(Vector3 num)
     {
         return Mathf.Sqrt(num.x*num.x+num.y*num.y+num.z+num.z);
+    }
+    void spiralProjectiles(int rings, bool counterClockwise)
+    {
+        if(counterClockwise)
+        _aimRoundVector = new Vector3(Mathf.Sin(_roundCount),Mathf.Cos(_roundCount),0);
+
+        else
+        _aimRoundVector = new Vector3(Mathf.Cos(_roundCount),Mathf.Sin(_roundCount),0);
+
+        for(int x =0; x<rings;x++)
+        {
+            _roundCount++;
+        }
+        GameObject circleProj = Instantiate(projectilePrefab);
+        circleProj.transform.position = transform.position;
+        Rigidbody2D rb = circleProj.GetComponent<Rigidbody2D>();
+        rb.AddForce(_aimRoundVector*4*hardMode,ForceMode2D.Impulse);
+    }
+    void randomDirectProjectile()
+    {
+        _aimVector = hero.transform.position - transform.position;
+        for(int x =0; x<3; x++)
+        {
+            if(Random.Range(0,2)==0)
+            {
+            _aimVector.x = _aimVector.x + x*Random.Range(1,6);
+            _aimVector.y = _aimVector.y + x*Random.Range(1,6);
+            }
+            else
+            {
+            _aimVector.x = _aimVector.x - x*Random.Range(1,6);
+            _aimVector.y = _aimVector.y - x*Random.Range(1,6);
+            }
+            GameObject directProj = Instantiate(projectiles[Random.Range(0,4)]);
+            directProj.transform.position = transform.position;
+            Rigidbody2D rb = directProj.GetComponent<Rigidbody2D>();
+            rb.AddForce((_aimVector/unitVector(_aimVector))*Random.Range(2,4),ForceMode2D.Impulse);
+        }
+        _aimVector =  transform.position - hero.transform.position;
+        for(int x =0; x<3; x++)
+        {
+            if(Random.Range(0,2)==0)
+            {
+            _aimVector.x = _aimVector.x + x*Random.Range(1,6);
+            _aimVector.y = _aimVector.y + x*Random.Range(1,6);
+            }
+            else
+            {
+            _aimVector.x = _aimVector.x - x*Random.Range(1,6);
+            _aimVector.y = _aimVector.y - x*Random.Range(1,6);
+            }
+            GameObject directProj = Instantiate(projectiles[Random.Range(0,4)]);
+            directProj.transform.position = transform.position;
+            Rigidbody2D rb = directProj.GetComponent<Rigidbody2D>();
+            rb.AddForce((_aimVector/unitVector(_aimVector))*Random.Range(2,4),ForceMode2D.Impulse);
+        }
+       
     }
 }
