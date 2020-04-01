@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class BossHits : MonoBehaviour
 {
-    private static int health = 1;
+    private static int health = 50;
     void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.tag == "Attack")
+        {
         health--;
+        Debug.Log("boss");
+        }   
     }
     void Update()
     {
