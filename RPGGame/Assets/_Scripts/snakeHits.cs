@@ -25,6 +25,9 @@ public class snakeHits : MonoBehaviour
             GameObject temp = this.gameObject;
             Destroy(GameObject.Find("Projectile(Clone)"));
             temp.SetActive(false);
+            
+            PlayerAttack.BoomUnlocked(2);
+            GameEvents.current.LevelCompleted(2);
         }
         snakeHP.text = "Snake HP: " + health;
     }

@@ -40,7 +40,6 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _boomUnlocked = true;
         if (_inputEnabled){
             //Weapon Switching
             if (Input.GetKeyDown(KeyCode.Alpha3) && _boomUnlocked){
