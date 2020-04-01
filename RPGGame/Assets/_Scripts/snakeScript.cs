@@ -240,6 +240,10 @@ public class snakeScript : MonoBehaviour
             }
         }
         */
+        if(snake.activeSelf ==false && snake3.activeSelf == false)
+        {
+            GameEvents.current.LevelCompleted(2);
+        }
     }
 
     float unitVector(Vector3 num)

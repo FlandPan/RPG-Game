@@ -16,5 +16,9 @@ public class BoundSet : MonoBehaviour
             GameObject player = PlayerSingleton.player;
             player.GetComponent<PlayerMovement>().SetBounds(10,-6,-18,6);
         }
+        if (SceneManager.GetActiveScene().name == "Boss"){
+            GameObject player = PlayerSingleton.player;
+            player.GetComponent<PlayerMovement>().SetBounds(10,-6,-18,6);
+        }
     }
 }

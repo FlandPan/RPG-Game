@@ -44,6 +44,34 @@ public class CoinLevelManager : MonoBehaviour
             }
             _completedLevels[1] = true;
         }
+        //Snake Room
+        if (index == 2 && !_completedLevels[index]){
+
+            if (deltaTime > 60){
+                _totalCoins += 5;
+            }
+            else if (deltaTime > 30){
+                _totalCoins += 10;
+            }
+            else{
+                _totalCoins += 20;
+            }
+            _completedLevels[2] = true;
+        }
+        //Boss Room
+         if (index == 3 && !_completedLevels[index]){
+
+            if (deltaTime > 60){
+                _totalCoins += 5;
+            }
+            else if (deltaTime > 30){
+                _totalCoins += 10;
+            }
+            else{
+                _totalCoins += 20;
+            }
+            _completedLevels[3] = true;
+        }
     }
     public bool canBuy(int num){
         return _totalCoins >= num;
