@@ -13,7 +13,9 @@ public class BossHits : MonoBehaviour
         {
         health--;
         Debug.Log("boss hit");
+        if(other.name !="boomerang(Clone)")
         Destroy(other.gameObject);
+        
         }   
     }
     void Update()

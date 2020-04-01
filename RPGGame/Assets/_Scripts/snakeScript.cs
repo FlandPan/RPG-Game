@@ -15,6 +15,7 @@ public class snakeScript : MonoBehaviour
     private bool _hasMoved = false;
     private int _count = 0;
     private int _num=0;
+    private float _timeForNextMove = 0.07f;
 
     //*****************************TAIL PROJECTILE***********************************************
     public Rigidbody2D tailProjRB;
@@ -45,7 +46,7 @@ public class snakeScript : MonoBehaviour
     {
         if(_tailReturn == false && _paraReturn ==false)
         {
-            if(Time.frameCount%10 ==0 && _hasMoved == false)
+            if(_timeForNextMove <=0)
             {
                 snake5.transform.position = snake4.transform.position;
                 snake4.transform.position = snake3.transform.position;
@@ -53,14 +54,10 @@ public class snakeScript : MonoBehaviour
                 snake2.transform.position = snake1.transform.position;
                 snake1.transform.position = snake.transform.position;
                 snake.transform.position = new Vector3(snake.transform.position.x + _move.x,snake.transform.position.y + _move.y,0);
-                _hasMoved = true;
                 _count++;
+                _timeForNextMove = 0.07f;
             }
-
-            if(Time.frameCount%10 ==1)
-            {
-                _hasMoved = false;
-            }
+            _timeForNextMove -= Time.deltaTime;
 
             switch(_num)
             {
@@ -242,6 +239,7 @@ public class snakeScript : MonoBehaviour
         */
         if(snake.activeSelf ==false && snake3.activeSelf == false)
         {
+            PlayerAttack.BoomUnlocked(2);
             GameEvents.current.LevelCompleted(2);
         }
     }

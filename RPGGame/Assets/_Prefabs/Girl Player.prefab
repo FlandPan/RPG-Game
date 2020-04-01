@@ -191,8 +191,13 @@ MonoBehaviour:
     type: 3}
   boltPrefab: {fileID: 6098208477273738187, guid: 924a59551c655474791dd2825c889599,
     type: 3}
+  boomerangPrefab: {fileID: 7453884542603641761, guid: 8f86da41817e994438ba5c51fc9cf20c,
+    type: 3}
   bulletForce: 15
   weaponChoice: 1
+  _maxShootSpd: 0.75
+  _maxBurnSpd: 1
+  _maxBoltSpd: 0.25
 --- !u!114 &3003428863598499739
 MonoBehaviour:
   m_ObjectHideFlags: 0

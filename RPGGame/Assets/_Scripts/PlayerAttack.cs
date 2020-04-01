@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject projectilePrefab;    
     public GameObject firePrefab;
     public GameObject boltPrefab;
+    public GameObject boomerangPrefab;
 
     public float bulletForce = 15f;
     public int weaponChoice = 0;
@@ -18,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     public float _maxBoltSpd = 0.25f;
     private bool _inputEnabled;
     private static bool _boltUnlocked;
+    private static bool _boomUnlocked;
     
     void Start()
     {
@@ -27,16 +29,23 @@ public class PlayerAttack : MonoBehaviour
     public void DisableInput(){
         _inputEnabled = false;
         _boltUnlocked = false;
+        _boomUnlocked = false;
     }
     public static void BoltUnlocked(int ind){
         _boltUnlocked = true;
     }
-
+    public static void BoomUnlocked(int ind){
+        _boomUnlocked = true;
+    }
     // Update is called once per frame
     void Update()
     {
+        _boomUnlocked = true;
         if (_inputEnabled){
             //Weapon Switching
+            if (Input.GetKeyDown(KeyCode.Alpha3) && _boomUnlocked){
+                weaponChoice = 3;
+            }
             if (Input.GetKeyDown(KeyCode.Alpha2) && _boltUnlocked){
                 weaponChoice = 2;
             }
@@ -94,6 +103,9 @@ public class PlayerAttack : MonoBehaviour
                     Bolt(shootDirection);
                     _boltAttSpd = _maxBoltSpd;
                 }
+                else if (weaponChoice == 3 && GameObject.Find("boomerang(Clone)")==null){
+                    Boomerang(shootDirection);
+                }
             }
         }
     }
@@ -148,7 +160,7 @@ public class PlayerAttack : MonoBehaviour
     public void Bolt(string direction){
         Quaternion rotate = new Quaternion();
         Vector2 side = new Vector2();
-        switch (direction)
+       switch (direction)
         {
             case "up":
                 rotate = Quaternion.Euler(0,0,0);
@@ -169,5 +181,38 @@ public class PlayerAttack : MonoBehaviour
         }
         GameObject firedProj = Instantiate(boltPrefab,transform.position,rotate);
         firedProj.GetComponent<Rigidbody2D>().AddForce(side*bulletForce,ForceMode2D.Impulse);
+    }
+    public void Boomerang(string direction)
+    {
+        Quaternion rotate = new Quaternion();
+        Vector3 side = new Vector3();
+        
+         switch (direction)
+        {
+            case "up":
+                rotate = Quaternion.Euler(0,0,90);
+                side = Vector3.up;
+                break;
+            case "down":
+                rotate = Quaternion.Euler(0,0,270);
+                side = Vector3.down;
+                break;
+            case "left":
+                rotate = Quaternion.Euler(0,0,180);
+                side = Vector3.left;
+                break;
+            case "right":
+                rotate = Quaternion.Euler(0,0,0);
+                side = Vector3.right;
+                break;
+        }
+        GameObject firedProj = Instantiate(boomerangPrefab,transform.position + (side)*2,rotate);
+        firedProj.GetComponent<Rigidbody2D>().AddForce(side*bulletForce,ForceMode2D.Impulse);
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == ("boomerang(Clone)")){
+            Destroy(other.gameObject);
+        }
     }
 }

@@ -14,6 +14,7 @@ public class snakeHits : MonoBehaviour
         {
         health--;
         Debug.Log("snake hit");
+        if(other.name != "boomerang(Clone)")
         Destroy(other.gameObject);
         }   
     }
