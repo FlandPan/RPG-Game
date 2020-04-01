@@ -18,7 +18,7 @@ public class bossScript : MonoBehaviour
     private int projectileCounter=0;
     private int hardMode = 1;
     private float timeForAttack =0f;
-    private float timeForStanceChange = 10f;
+    private float timeForStanceChange = 8f;
     private GameObject [] projectiles = new GameObject [4];
 
 
@@ -54,7 +54,7 @@ public class bossScript : MonoBehaviour
             {
                 counterClockwise = false;
             }
-            timeForStanceChange=10f;
+            timeForStanceChange=8f;
         }
         timeForAttack -= Time.deltaTime;
         if(timeForAttack<=0)

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snakeHits : MonoBehaviour
+public class BossHits : MonoBehaviour
 {
-    private static int health = 100;
+    private static int health = 1;
     void OnTriggerEnter2D(Collider2D other)
     {
         health--;
