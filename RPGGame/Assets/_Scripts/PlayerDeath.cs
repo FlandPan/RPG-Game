@@ -10,6 +10,8 @@ public class PlayerDeath : MonoBehaviour
     public GameObject deathScreen;
     public void Restart(){
         SceneManager.LoadScene("Hub");
+        CharacterSelection.SetDisplay();
+        TimerManager.GameRestarted();
         Destroy(PlayerSingleton.player);
     }
     void Start()

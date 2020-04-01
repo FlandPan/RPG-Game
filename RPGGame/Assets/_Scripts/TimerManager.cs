@@ -8,18 +8,25 @@ public class TimerManager : MonoBehaviour
     private Text _timerText;
     private static bool _gameRestarted;
     public GameObject canvas;
+    private static TimerManager current;
     void Awake()
     {
+        if (current != null){
+            Destroy(this.gameObject);
+            Destroy(this.transform.parent.gameObject);
+        }
+        else{
+            current = this;
+        }
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(canvas);
         _timerText = this.gameObject.GetComponent<Text>();
-        GameEvents.current.OnPlayerDeath += GameRestarted;
         if (!_gameRestarted){
             Timer.StartCountDown(new System.TimeSpan(0,5,0));
             _gameRestarted = true;
         }
     }
-    public void GameRestarted(){
+    public static void GameRestarted(){
         _gameRestarted = false;
     }
     void Update()

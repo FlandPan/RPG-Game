@@ -14,8 +14,15 @@ public class GameEvents : MonoBehaviour
 
     public event Action<int> OnPlayerDamage;
     public event Action OnPlayerDeath;
-    public event Action OnEnemyDeath;
     public event Action<int> OnLevelComplete;
+    public event Action OnRestart;
+
+    public void RestartGame(){
+        if (OnRestart != null){
+            Debug.Log("Event");
+            OnRestart();
+        }
+    }
     public void LevelCompleted(int index){
         if (OnLevelComplete != null){
             OnLevelComplete(index);
@@ -34,9 +41,4 @@ public class GameEvents : MonoBehaviour
     }
 
     
-    public void EnemyDied(){
-        if (OnEnemyDeath != null){
-
-        }
-    }
 }

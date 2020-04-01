@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(maxEnemies!=enemyCount && check == false && Mathf.Floor(Time.time) %5 == 0)
+        if(maxEnemies!=enemyCount && check == false && Mathf.Floor(Time.time) %3 == 0)
         {
             GameObject enemy = Instantiate(enemyPrefab);
             enemy.transform.position = new Vector3(Random.Range(-10,10),Random.Range(-5,5),0);
@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
             check = true;
             enemyCount++;
         }
-        else if(check == true &&Mathf.Floor(Time.time) %5 == 1)
+        else if(check == true &&Mathf.Floor(Time.time) %3 == 1)
         {
             check = false;
         }
