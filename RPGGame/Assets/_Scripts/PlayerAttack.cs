@@ -10,12 +10,12 @@ public class PlayerAttack : MonoBehaviour
 
     public float bulletForce = 15f;
     public int weaponChoice = 0;
-    private int _shootAttSpd = 0;
-    private int _maxShootSpd = 100;
-    private int _burnAttSpd = 0;
-    private int _maxBurnSpd = 100;
-    private int _boltAttSpd = 0;
-    private int _maxBoltSpd = 10;
+    private float _shootAttSpd = 0;
+    private float _maxShootSpd = 0.75f;
+    private float _burnAttSpd = 0;
+    private float _maxBurnSpd = 1f;
+    private float _boltAttSpd = 0;
+    private float _maxBoltSpd = 0.25f;
     private bool _inputEnabled;
     
     void Start()
@@ -31,16 +31,16 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         if (_inputEnabled){
-            if(_shootAttSpd!=0)
+            if(_shootAttSpd>0)
             {
-            _shootAttSpd--;
+            _shootAttSpd -= Time.deltaTime;
             }
-            if(_burnAttSpd!=0)
+            if(_burnAttSpd>0)
             {
-            _burnAttSpd--;
+            _burnAttSpd-= Time.deltaTime;
             }
-            if(_boltAttSpd != 0){
-                _boltAttSpd --;
+            if(_boltAttSpd > 0){
+                _boltAttSpd -= Time.deltaTime;
             }
             string shootDirection = "";
             bool pressed = false;
@@ -65,15 +65,15 @@ public class PlayerAttack : MonoBehaviour
                 pressed = true;
             }
             if (pressed){
-                if (weaponChoice == 0 && _shootAttSpd == 0){
+                if (weaponChoice == 0 && _shootAttSpd <= 0){
                     Shoot(shootDirection);
                     _shootAttSpd = _maxShootSpd;
                 }
-                else if (weaponChoice == 1 && _burnAttSpd == 0){
+                else if (weaponChoice == 1 && _burnAttSpd <= 0){
                     Burn(shootDirection);
                     _burnAttSpd = _maxBurnSpd;
                 }
-                else if (weaponChoice == 2 && _boltAttSpd == 0){
+                else if (weaponChoice == 2 && _boltAttSpd <= 0){
                     Bolt(shootDirection);
                     _boltAttSpd = _maxBoltSpd;
                 }
