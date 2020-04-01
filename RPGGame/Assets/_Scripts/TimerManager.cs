@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerManager : MonoBehaviour
 {
@@ -32,5 +33,8 @@ public class TimerManager : MonoBehaviour
     void Update()
     {
         _timerText.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
+        if (Timer.TimeLeft.TotalSeconds == 0){
+            SceneManager.LoadScene("Boss");
+        }
     }
 }
