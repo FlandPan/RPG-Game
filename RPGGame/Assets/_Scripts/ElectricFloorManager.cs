@@ -28,6 +28,7 @@ public class ElectricFloorManager : MonoBehaviour
         bool check = CheckEnemies();
         if (check && this.gameObject.GetComponent<EnemySpawner>().done){
             winUI.SetActive(true);
+            PlayerAttack.BoltUnlocked(1);
             GameEvents.current.LevelCompleted(1);
         }
     }

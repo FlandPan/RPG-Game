@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     private float _boltAttSpd = 0;
     private float _maxBoltSpd = 0.25f;
     private bool _inputEnabled;
+    private static bool _boltUnlocked;
     
     void Start()
     {
@@ -25,12 +26,28 @@ public class PlayerAttack : MonoBehaviour
     }
     public void DisableInput(){
         _inputEnabled = false;
+        _boltUnlocked = false;
+    }
+    public static void BoltUnlocked(int ind){
+        _boltUnlocked = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (_inputEnabled){
+            //Weapon Switching
+            if (Input.GetKeyDown(KeyCode.Alpha2) && _boltUnlocked){
+                weaponChoice = 2;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1) && this.gameObject.name == "Girl Player"){
+                weaponChoice = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha0) && this.gameObject.name == "Player"){
+                weaponChoice = 0;
+            }
+
+            //Weapon cooldown
             if(_shootAttSpd>0)
             {
             _shootAttSpd -= Time.deltaTime;
