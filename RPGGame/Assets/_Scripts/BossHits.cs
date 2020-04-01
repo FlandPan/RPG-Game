@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHits : MonoBehaviour
 {
     private static int health = 50;
+    public Text bossHP;
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Attack")
@@ -22,6 +24,7 @@ public class BossHits : MonoBehaviour
             Destroy(GameObject.Find("Projectile(Clone)"));
             temp.SetActive(false);
         }
+        bossHP.text = "Boss HP: " + health;
     }
     void OnCollisionEnter2D(Collision2D other)
     {

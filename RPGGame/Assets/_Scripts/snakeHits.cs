@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class snakeHits : MonoBehaviour
 {
     private static int health = 100;
+    public Text snakeHP;
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Attack")
@@ -22,6 +25,7 @@ public class snakeHits : MonoBehaviour
             Destroy(GameObject.Find("Projectile(Clone)"));
             temp.SetActive(false);
         }
+        snakeHP.text = "Snake HP: " + health;
     }
     void OnCollisionEnter2D(Collision2D other)
     {
