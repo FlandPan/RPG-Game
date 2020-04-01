@@ -31,12 +31,14 @@ public class Store : MonoBehaviour
         storeUI.SetActive(true);
     }
     public void StatButton1(){
-
+        _player.GetComponent<PlayerAttack>()._maxShootSpd = (_player.GetComponent<PlayerAttack>()._maxShootSpd / 6) * 5;
+        _player.GetComponent<PlayerAttack>()._maxBurnSpd = (_player.GetComponent<PlayerAttack>()._maxBurnSpd / 6) * 5;
+        _player.GetComponent<PlayerAttack>()._maxBoltSpd = (_player.GetComponent<PlayerAttack>()._maxBoltSpd / 6) * 5;
     }
     public void StatButton2(){
-
+        _player.GetComponent<PlayerMovement>().moveSpeed += 1f;
     }
     public void StatButton3(){
-
+        _player.GetComponent<PlayerStats>().pDamage += 1;
     }
 }

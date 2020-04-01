@@ -11,11 +11,11 @@ public class PlayerAttack : MonoBehaviour
     public float bulletForce = 15f;
     public int weaponChoice = 0;
     private float _shootAttSpd = 0;
-    private float _maxShootSpd = 0.75f;
+    public float _maxShootSpd = 0.75f;
     private float _burnAttSpd = 0;
-    private float _maxBurnSpd = 1f;
+    public float _maxBurnSpd = 1f;
     private float _boltAttSpd = 0;
-    private float _maxBoltSpd = 0.25f;
+    public float _maxBoltSpd = 0.25f;
     private bool _inputEnabled;
     
     void Start()
