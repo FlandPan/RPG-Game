@@ -54,8 +54,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Blink(Vector2 direction){
-        direction *= 3*Vector2.SqrMagnitude(direction);
-        Vector2 newPos = transform.position + new Vector3(direction.x, direction.y);
+        Vector2 newPos = transform.position + 3*Vector3.Normalize(new Vector3(direction.x, direction.y));
         if (newPos.x < leftBound)
             newPos.x = leftBound;
         if (newPos.y < lowerBound)
