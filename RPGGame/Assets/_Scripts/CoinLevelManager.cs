@@ -27,7 +27,6 @@ public class CoinLevelManager : MonoBehaviour
         int deltaTime = _startTime-currentTime;
         //DLS room
         if (index == 1 && !_completedLevels[index]){
-
             if (deltaTime > 60){
                 _totalCoins += 5;
             }
