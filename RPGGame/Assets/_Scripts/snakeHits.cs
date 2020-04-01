@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class snakeHits : MonoBehaviour
 {
-    private static int health = 100;
+    private static int health = 25;
     public Text snakeHP;
     
     void OnTriggerEnter2D(Collider2D other)

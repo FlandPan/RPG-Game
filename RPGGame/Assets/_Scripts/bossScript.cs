@@ -19,6 +19,7 @@ public class bossScript : MonoBehaviour
     private int hardMode = 1;
     private float timeForAttack =0f;
     private float timeForStanceChange = 8f;
+    private float timeForRandomAttack = 0f;
     private GameObject [] projectiles = new GameObject [4];
 
 
@@ -35,40 +36,50 @@ public class bossScript : MonoBehaviour
     }
     void Update()
     {
-        /***************ATTACK PATTERN 1 SPIRAL PROJECTILES**************************/
-        timeForStanceChange -= Time.deltaTime;
-        if(timeForStanceChange<=0)
+        if(BossHits.getHP()>25)
         {
-            projectileCounter++;
-            if(projectileCounter==4)
-            {
-                projectileCounter=0;
-            }
-            projectilePrefab=projectiles[projectileCounter];
-            chooser = Random.Range(1,4);
-            if(Random.Range(0,2)==1)
-            {
-                counterClockwise = true;
-            }
+            /***************ATTACK PATTERN 1 RANDOM PROJECTILES**************************/
+            if(timeForRandomAttack<=0)
+                {
+                    randomDirectProjectile();
+                    timeForRandomAttack = 0.25f;
+                }
             else
-            {
-                counterClockwise = false;
-            }
-            timeForStanceChange=8f;
+                {
+                    timeForRandomAttack -= Time.deltaTime;
+                }
         }
-        timeForAttack -= Time.deltaTime;
-        if(timeForAttack<=0)
+        else
         {
-            spiralProjectiles(chooser,counterClockwise);
-            timeForAttack = 0.06f;
+            /***************ATTACK PATTERN 2 SPIRAL PROJECTILES**************************/
+            timeForStanceChange -= Time.deltaTime;
+            if(timeForStanceChange<=0)
+            {
+                projectileCounter++;
+                if(projectileCounter==4)
+                {
+                    projectileCounter=0;
+                }
+                projectilePrefab=projectiles[projectileCounter];
+                chooser = Random.Range(1,4);
+                if(Random.Range(0,2)==1)
+                {
+                    counterClockwise = true;
+                }
+                else
+                {
+                    counterClockwise = false;
+                }
+                timeForStanceChange=8f;
+            }
+            timeForAttack -= Time.deltaTime;
+            if(timeForAttack<=0)
+            {
+                spiralProjectiles(chooser,counterClockwise);
+                timeForAttack = 0.06f;
+            }
         }
         
-        /*******************ATTACK PATTERN 2 SPORATIC DIRECT HITS****************
-        if(Time.frameCount%20==0)
-        {
-            randomDirectProjectile();
-        }
-        */
     }
     float unitVector(Vector3 num)
     {

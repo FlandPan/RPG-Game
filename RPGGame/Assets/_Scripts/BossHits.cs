@@ -32,4 +32,8 @@ public class BossHits : MonoBehaviour
             GameEvents.current.PlayerGetsDamaged(10);
         }
     }
+    public static int getHP()
+    {
+        return health;
+    }
 }
