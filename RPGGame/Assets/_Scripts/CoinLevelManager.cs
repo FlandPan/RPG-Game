@@ -23,10 +23,11 @@ public class CoinLevelManager : MonoBehaviour
         _totalCoins = 0;
     }
     public void addCoins(int index){
+        int currentTime = (int)Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
+        int deltaTime = _startTime-currentTime;
         //DLS room
         if (index == 1 && !_completedLevels[index]){
-            int currentTime = (int)Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
-            int deltaTime = _startTime-currentTime;
+
             if (deltaTime > 60){
                 _totalCoins += 5;
             }
