@@ -11,6 +11,7 @@ public class snakeHits : MonoBehaviour
         {
         health--;
         Debug.Log("snake hit");
+        Destroy(other.gameObject);
         }   
     }
     void Update()

@@ -10,7 +10,8 @@ public class BossHits : MonoBehaviour
         if(other.tag == "Attack")
         {
         health--;
-        Debug.Log("boss");
+        Debug.Log("boss hit");
+        Destroy(other.gameObject);
         }   
     }
     void Update()
