@@ -12,6 +12,8 @@ public class PlayerDeath : MonoBehaviour
         SceneManager.LoadScene("Hub");
         CharacterSelection.SetDisplay();
         TimerManager.GameRestarted();
+        CoinLevelManager.ResetCoins();
+        CoinLevelManager.ResetLevels();
         Destroy(PlayerSingleton.player);
     }
     void Start()

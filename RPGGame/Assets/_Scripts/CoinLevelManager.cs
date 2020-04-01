@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class CoinLevelManager : MonoBehaviour
 {
-    private int _totalCoins;
+    private static int _totalCoins;
     private int _startTime;
-    private bool[] _completedLevels = new bool[9];
+    private static bool[] _completedLevels = new bool[9];
     void Start()
     {
         GameEvents.current.OnLevelComplete += addCoins;
         _startTime = (int)Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
     }
-
+    public static void ResetLevels(){
+        for (int i = 0; i < 9; i++)
+        {
+            _completedLevels[i] = false;
+        }
+    }
+    public static void ResetCoins(){
+        _totalCoins = 0;
+    }
     public void addCoins(int index){
         //DLS room
         if (index == 1 && !_completedLevels[index]){

@@ -78,49 +78,6 @@ public class PlayerAttack : MonoBehaviour
                     _boltAttSpd = _maxBoltSpd;
                 }
             }
-            /////////////////////////////Bolt Shooting///////////////////////////////////////
-            /////////////////////////////Projectile Shooting/////////////////////////////////
-            //     if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.J) && _shootAttSpd == 0)
-            //     {
-            //         Shoot("left");
-            //         _shootAttSpd = 100;
-            //     }
-            //     else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.I) && _shootAttSpd == 0)
-            //     {
-            //         Shoot("up");
-            //         _shootAttSpd = 100;
-            //     }
-            //     else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.L) && _shootAttSpd == 0)
-            //     {
-            //         Shoot("right");
-            //         _shootAttSpd = 100;
-            //     }
-            //     else if(weaponChoice == 0 && Input.GetKeyDown(KeyCode.K) && _shootAttSpd == 0)
-            //     {
-            //         Shoot("down");
-            //         _shootAttSpd = 100;
-            //     }
-            // //////////////////////////////Fire Shooting//////////////////////////////////////
-            //     if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.J) && _burnAttSpd == 0)
-            //     {
-            //         Burn("left");
-            //         _burnAttSpd = 100;
-            //     }
-            //     else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.I) && _burnAttSpd == 0)
-            //     {
-            //         Burn("up");
-            //         _burnAttSpd = 100;
-            //     }
-            //     else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.L) && _burnAttSpd == 0)
-            //     {
-            //         Burn("right");
-            //         _burnAttSpd = 100;
-            //     }
-            //     else if(weaponChoice == 1 && Input.GetKeyDown(KeyCode.K) && _burnAttSpd == 0)
-            //     {
-            //         Burn("down");
-            //         _burnAttSpd = 100;
-            //     }
         }
     }
     void Shoot(string direction){
