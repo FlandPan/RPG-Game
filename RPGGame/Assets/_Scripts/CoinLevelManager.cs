@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CoinLevelManager : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class CoinLevelManager : MonoBehaviour
     {
         GameEvents.current.OnLevelComplete += addCoins;
         _startTime = (int)Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
+    }
+    void Update()
+    {
+        if (_completedLevels[1] && _completedLevels[2]){
+            SceneManager.LoadScene("Boss");
+        }
     }
     public static void ResetLevels(){
         for (int i = 0; i < 9; i++)
