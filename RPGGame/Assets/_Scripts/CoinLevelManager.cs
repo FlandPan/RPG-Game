@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CoinLevelManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CoinLevelManager : MonoBehaviour
     void Update()
     {
         if (_completedLevels[1] && _completedLevels[2]){
-            
+            SceneManager.LoadScene("Boss");
         }
     }
     public static void ResetLevels(){
