@@ -17,10 +17,14 @@ public class bossScript : MonoBehaviour
     private GameObject projectilePrefab;
     private int projectileCounter=0;
     private int hardMode = 1;
-        private GameObject [] projectiles = new GameObject [4];
+    private float timeForAttack =0f;
+    private float timeForStanceChange = 10f;
+    private GameObject [] projectiles = new GameObject [4];
+
 
     // Update is called once per frame
     void Start() {
+
 
         projectiles[0] = addProj;
         projectiles[1] = minusProj;
@@ -32,7 +36,8 @@ public class bossScript : MonoBehaviour
     void Update()
     {
         /***************ATTACK PATTERN 1 SPIRAL PROJECTILES**************************/
-        if(Time.frameCount%(250)==0)
+        timeForStanceChange -= Time.deltaTime;
+        if(timeForStanceChange<=0)
         {
             projectileCounter++;
             if(projectileCounter==4)
@@ -49,10 +54,13 @@ public class bossScript : MonoBehaviour
             {
                 counterClockwise = false;
             }
+            timeForStanceChange=10f;
         }
-        if(Time.frameCount%(4/hardMode)==0)
+        timeForAttack -= Time.deltaTime;
+        if(timeForAttack<=0)
         {
             spiralProjectiles(chooser,counterClockwise);
+            timeForAttack = 0.06f;
         }
         
         /*******************ATTACK PATTERN 2 SPORATIC DIRECT HITS****************
