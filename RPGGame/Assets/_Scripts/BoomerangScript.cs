@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoomerangScript : MonoBehaviour
+public class BoomerangScript : ProjectileScript
 {
     GameObject hero;
 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class snakeHits : MonoBehaviour
 {
-    private static int health = 25;
+    private static int health = 500;
     public Text snakeHP;
     public GameObject winUI;
     
@@ -14,8 +14,7 @@ public class snakeHits : MonoBehaviour
     {
         if(other.tag == "Attack")
         {
-            Debug.Log(PlayerSingleton.player.GetComponent<PlayerStats>().pDamage);
-        for(int x =0; x < PlayerSingleton.player.GetComponent<PlayerStats>().pDamage;x++)
+        for(int x =0; x < ProjectileScript.Damage * PlayerSingleton.player.GetComponent<PlayerStats>().pDamage;x++)
         {
             health--;
         }

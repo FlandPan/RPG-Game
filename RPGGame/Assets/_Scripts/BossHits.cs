@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class BossHits : MonoBehaviour
 {
-    private static int health = 50;
+    private static int health = 500;
     public Text bossHP;
+    public GameObject winText;
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Attack")
         {
-         for(int x =0; x < PlayerSingleton.player.GetComponent<PlayerStats>().pDamage;x++)
+         for(int x =0; x < ProjectileScript.Damage * PlayerSingleton.player.GetComponent<PlayerStats>().pDamage;x++)
         {
             health--;
         }
@@ -26,6 +27,7 @@ public class BossHits : MonoBehaviour
             GameObject temp = this.gameObject;
             Destroy(GameObject.Find("Projectile(Clone)"));
             temp.SetActive(false);
+            winText.SetActive(true);
         }
         bossHP.text = "Boss HP: " + health;
     }
