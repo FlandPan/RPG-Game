@@ -13,7 +13,7 @@ public class Score : MonoBehaviour
         score3.text = "High Score 3: " + PlayerPrefs.GetInt("HS3").ToString();
     }
 
-    public void UpdateScore(){        
+ void Update(){        
         if (number > PlayerPrefs.GetInt("HS1")){
             PlayerPrefs.SetInt("HS3", PlayerPrefs.GetInt("HS2"));
             PlayerPrefs.SetInt("HS2", PlayerPrefs.GetInt("HS1"));
