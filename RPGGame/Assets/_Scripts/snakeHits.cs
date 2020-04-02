@@ -7,6 +7,7 @@ public class snakeHits : MonoBehaviour
 {
     private static int health = 25;
     public Text snakeHP;
+    public GameObject winUI;
     
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,6 +29,7 @@ public class snakeHits : MonoBehaviour
             
             PlayerAttack.BoomUnlocked(2);
             GameEvents.current.LevelCompleted(2);
+            winUI.SetActive(true);
         }
         snakeHP.text = "Snake HP: " + health;
     }
