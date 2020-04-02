@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snakeProjectile : MonoBehaviour
+public class SnakeProjectile : MonoBehaviour
 {
     private int Damage = 20;
         
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Test");
         if (other.gameObject == PlayerSingleton.player){
-            Debug.Log(other.gameObject.name);
             GameEvents.current.PlayerGetsDamaged(Damage);
         }
     }
