@@ -21,15 +21,7 @@ public class CoinLevelManager : MonoBehaviour
         if (_completedLevels[1] && _completedLevels[2] && SceneManager.GetActiveScene().name != "Hub" && SceneManager.GetActiveScene().name != "Boss"){
             SceneManager.LoadScene("Hub");
             Timer.StartCountDown(new System.TimeSpan(0,0,10));
-            if (BossHits.getHP() == 0) {
-                scr = (int)Math.Floor(Timer.TimeLeft.TotalSeconds * 100);
-                timeScore(scr);
-            }
         }
-    }
-
-    public static void timeScore(int timeScr){
-        Score.number = timeScr;
     }
 
     public static void ResetLevels(){
