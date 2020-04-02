@@ -14,18 +14,23 @@ public class Score : MonoBehaviour
     }
 
     public void UpdateScore(){
-        int number = Random.Range(1,7);
+        int number = Random.Range(1,11);
         
         if (number > PlayerPrefs.GetInt("HS1")){
+            PlayerPrefs.SetInt("HS3", PlayerPrefs.GetInt("HS2"));
+            PlayerPrefs.SetInt("HS2", PlayerPrefs.GetInt("HS1"));
             PlayerPrefs.SetInt("HS1", number);
-            score1.text = "High Score 1: " + number.ToString();
+            score1.text = "High Score 1: " + PlayerPrefs.GetInt("HS1");
+            score2.text = "High Score 2: " + PlayerPrefs.GetInt("HS2");
+            score3.text = "High Score 3: " + PlayerPrefs.GetInt("HS3");
         } else if (number > PlayerPrefs.GetInt("HS2")){
+            PlayerPrefs.SetInt("HS3", PlayerPrefs.GetInt("HS2"));
             PlayerPrefs.SetInt("HS2", number);
-            score2.text = "High Score 2: " + number.ToString();
-        } else if (number > PlayerPrefs.GetInt("HS3"))
-        {
+            score2.text = "High Score 2: " + PlayerPrefs.GetInt("HS2");
+            score3.text = "High Score 3: " + PlayerPrefs.GetInt("HS3");
+        } else if (number > PlayerPrefs.GetInt("HS3"))        {
             PlayerPrefs.SetInt("HS3", number);
-            score3.text = "High Score 3: " + number.ToString();
+            score3.text = "High Score 3: " + PlayerPrefs.GetInt("HS3");
         }
     }
 
