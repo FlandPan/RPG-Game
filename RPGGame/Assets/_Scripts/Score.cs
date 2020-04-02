@@ -16,31 +16,23 @@ public class Score : MonoBehaviour
     }
     public static void SetScore(int num)
     {
-        Debug.Log(num);
         score = num;
     }
     public static void updateNum()
     {
-        Debug.Log("update");
-        Debug.Log("IF1");
-        Debug.Log(score);
         if (score > PlayerPrefs.GetInt("HS1"))
         {
-            Debug.Log("IF2");
             PlayerPrefs.SetInt("HS3", PlayerPrefs.GetInt("HS2"));
             PlayerPrefs.SetInt("HS2", PlayerPrefs.GetInt("HS1"));
             PlayerPrefs.SetInt("HS1", score);
-            Debug.Log(PlayerPrefs.GetInt("HS1"));
         }
         else if (score > PlayerPrefs.GetInt("HS2"))
         {
-            Debug.Log("IF3");
             PlayerPrefs.SetInt("HS3", PlayerPrefs.GetInt("HS2"));
             PlayerPrefs.SetInt("HS2", score);
         }
         else if (score > PlayerPrefs.GetInt("HS3"))
         {
-            Debug.Log("IF4");
             PlayerPrefs.SetInt("HS3", score);
         }
     }
