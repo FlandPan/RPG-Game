@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectileTimer : MonoBehaviour
+public class ProjectileTimer : MonoBehaviour
 {
     // Start is called before the first frame update
     public int time;
