@@ -6,6 +6,6 @@ public class BoltScript : ProjectileScript
 {
     void Start()
     {
-        Damage = 4;
+        Damage = 16;
     }
 }
