@@ -108,7 +108,7 @@ public class SnakeScript : MonoBehaviour
     void FixedUpdate() 
     {
         
-        if(Time.fixedTime%5 == 0)
+        if(Time.fixedTime%3 == 0)
         {
             if(_paraReturn == false && ((hero.transform.position.x > snake5.transform.position.x + 2 && hero.transform.position.x < snake.transform.position.x -2) || (hero.transform.position.x > snake.transform.position.x+2 && hero.transform.position.x < snake5.transform.position.x-2)))
             {
