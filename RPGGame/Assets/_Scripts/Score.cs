@@ -3,19 +3,16 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Text score1;
-    public Text score2;
-    public Text score3;
+    public static Text score1;
+    public static Text score2;
+    public static Text score3;
     void Start(){
         score1.text = "High Score 1: " + PlayerPrefs.GetInt("HS1").ToString();
         score2.text = "High Score 2: " + PlayerPrefs.GetInt("HS2").ToString();
         score3.text = "High Score 3: " + PlayerPrefs.GetInt("HS3").ToString();
     }
 
-    void Update(){        
-        
-    }
-    public void updateNum(int num){
+    public static void updateNum(int num){
         if (BossHits.getHP() == 0)
         {
             if (num > PlayerPrefs.GetInt("HS1"))
