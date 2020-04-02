@@ -26,7 +26,7 @@ public class BoomerangScript : ProjectileScript
         {
             GetComponent<Rigidbody2D>().velocity = new Vector3 (0,0,0);
             Vector3 aim = Vector3.Normalize((hero.transform.position - transform.position));
-            GetComponent<Rigidbody2D>().AddForce(aim*15f,ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(aim*hero.GetComponent<PlayerAttack>().bulletForce,ForceMode2D.Impulse);
         }
     }
     
