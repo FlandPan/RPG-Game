@@ -16,7 +16,7 @@ public class CoinLevelManager : MonoBehaviour
     }
     void Update()
     {
-        if (_completedLevels[1] && _completedLevels[2]){
+        if (_completedLevels[1] && _completedLevels[2] && SceneManager.GetActiveScene().name != "Boss"){
             SceneManager.LoadScene("Boss");
         }
     }

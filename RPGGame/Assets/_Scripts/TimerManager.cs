@@ -10,6 +10,7 @@ public class TimerManager : MonoBehaviour
     private static bool _gameRestarted;
     public GameObject canvas;
     private static TimerManager current;
+    private bool _loaded = false;
     void Awake()
     {
         if (current != null){
@@ -23,7 +24,7 @@ public class TimerManager : MonoBehaviour
         DontDestroyOnLoad(canvas);
         _timerText = this.gameObject.GetComponent<Text>();
         if (!_gameRestarted){
-            Timer.StartCountDown(new System.TimeSpan(0,5,0));
+            Timer.StartCountDown(new System.TimeSpan(0,0,10));
             _gameRestarted = true;
         }
     }
@@ -33,8 +34,9 @@ public class TimerManager : MonoBehaviour
     void Update()
     {
         _timerText.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
-        if (Timer.TimeLeft.TotalSeconds == 0){
+        if (Timer.TimeLeft.TotalSeconds == 0 && !_loaded){
             SceneManager.LoadScene("Boss");
+            _loaded = true;
         }
     }
 }

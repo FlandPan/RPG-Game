@@ -32,6 +32,7 @@ public class bossScript : MonoBehaviour
         projectiles[2] = multProj;
         projectiles[3] = divProj;
         projectilePrefab = projectiles[projectileCounter];
+        hero = PlayerSingleton.player;
 
     }
     void Update()

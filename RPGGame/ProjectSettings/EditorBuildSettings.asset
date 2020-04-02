@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Data and Algo.unity
     guid: 832e43f60d9becf40b8cf6aff2eefd8e
+  - enabled: 1
+    path: Assets/_Scenes/Boss.unity
+    guid: c47ab41f87af4b14bb188661102e0485
   m_configObjects: {}

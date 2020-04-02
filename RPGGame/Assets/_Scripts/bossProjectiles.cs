@@ -9,7 +9,6 @@ public class bossProjectiles : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == PlayerSingleton.player){
-            Debug.Log(other.gameObject.name);
             GameEvents.current.PlayerGetsDamaged(Damage);
         }
     }
