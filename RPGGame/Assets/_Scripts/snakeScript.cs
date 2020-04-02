@@ -156,17 +156,27 @@ public class snakeScript : MonoBehaviour
         }
         if(_paraReturn == true)
         {
-            headProjRB.MovePosition(_headProjMove[_paraPosCount]);
-            if(_headProj.transform.position.x == _headProjMove[_paraPosCount].x)
+            try
             {
-                _paraPosCount++;
+                headProjRB.MovePosition(_headProjMove[_paraPosCount]);
+                if(_headProj.transform.position.x == _headProjMove[_paraPosCount].x)
+                {
+                    _paraPosCount++;
+                }
+                if(_headProj.transform.position.x > snake5.transform.position.x-1 && _headProj.transform.position.x < snake5.transform.position.x+1 && _headProj.transform.position.y < snake5.transform.position.y+1 && _headProj.transform.position.y > snake5.transform.position.y -1 && _paraReturn ==true)
+                {
+                    snake5.SetActive(true);
+                    Destroy(_headProj);
+                    _paraReturn = false;
+                    _paraPosCount = 0;
+                }
             }
-            if(_headProj.transform.position.x > snake5.transform.position.x-1 && _headProj.transform.position.x < snake5.transform.position.x+1 && _headProj.transform.position.y < snake5.transform.position.y+1 && _headProj.transform.position.y > snake5.transform.position.y -1 && _paraReturn ==true)
+            catch(System.Exception e)
             {
                 snake5.SetActive(true);
-                Destroy(_headProj);
-                _paraReturn = false;
-                _paraPosCount = 0;
+                    Destroy(_headProj);
+                    _paraReturn = false;
+                    _paraPosCount = 0;
             }
         }
 
