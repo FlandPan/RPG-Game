@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class snakeHits : MonoBehaviour
+public class SnakeHits : MonoBehaviour
 {
     private static int health = 100;
     public Text snakeHP;

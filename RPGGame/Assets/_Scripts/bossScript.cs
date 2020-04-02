@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossScript : MonoBehaviour
+public class BossScript : MonoBehaviour
 {
     public GameObject hero;
     public GameObject addProj;
