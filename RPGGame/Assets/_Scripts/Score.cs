@@ -6,16 +6,14 @@ public class Score : MonoBehaviour
     public Text score1;
     public Text score2;
     public Text score3;
-
+    public static int number;
     void Start(){
         score1.text = "High Score 1: " + PlayerPrefs.GetInt("HS1").ToString();
         score2.text = "High Score 2: " + PlayerPrefs.GetInt("HS2").ToString();
         score3.text = "High Score 3: " + PlayerPrefs.GetInt("HS3").ToString();
     }
 
-    public void UpdateScore(){
-        int number = Random.Range(1,11);
-        
+    public void UpdateScore(){        
         if (number > PlayerPrefs.GetInt("HS1")){
             PlayerPrefs.SetInt("HS3", PlayerPrefs.GetInt("HS2"));
             PlayerPrefs.SetInt("HS2", PlayerPrefs.GetInt("HS1"));
