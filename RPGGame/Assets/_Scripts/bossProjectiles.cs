@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossProjectiles : MonoBehaviour
+public class BossProjectiles : MonoBehaviour
 {
     private int Damage = 5;
         
