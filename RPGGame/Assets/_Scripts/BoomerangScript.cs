@@ -28,6 +28,6 @@ public class BoomerangScript : ProjectileScript
             GetComponent<Rigidbody2D>().AddForce(aim*15f,ForceMode2D.Impulse);
         }
     }
-     
+    
     
 }

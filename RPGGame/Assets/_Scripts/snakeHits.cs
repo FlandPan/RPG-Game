@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class snakeHits : MonoBehaviour
 {
-    private static int health = 500;
+    private static int health = 100;
     public Text snakeHP;
     public GameObject winUI;
+
+    void Awake()
+    {
+        health = 100;
+    }
     
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,7 +43,6 @@ public class snakeHits : MonoBehaviour
         snakeHP.text = "Snake HP: " + health;
     }
     public void Home(){
-        Debug.Log("HOME");
         SceneManager.LoadScene("Hub");
     }
     void OnCollisionEnter2D(Collision2D other)

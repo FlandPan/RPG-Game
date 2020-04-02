@@ -39,6 +39,7 @@ public class snakeScript : MonoBehaviour
     {
         _move.x =3;
         hero = PlayerSingleton.player;
+        hero.transform.position = new Vector3(-5,3,0);
     }
 
     // Update is called once per frame

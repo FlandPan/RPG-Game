@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CoinLevelManager : MonoBehaviour
 {
     private static int _totalCoins;
     private int _startTime;
+    private int scr;
     private static bool[] _completedLevels = new bool[9];
     void Start()
     {
@@ -19,8 +21,17 @@ public class CoinLevelManager : MonoBehaviour
         if (_completedLevels[1] && _completedLevels[2] && SceneManager.GetActiveScene().name != "Hub" && SceneManager.GetActiveScene().name != "Boss"){
             SceneManager.LoadScene("Hub");
             Timer.StartCountDown(new System.TimeSpan(0,0,10));
+            if (BossHits.getHP() == 0) {
+                scr = (int)Math.Floor(Timer.TimeLeft.TotalSeconds * 100);
+                timeScore(scr);
+            }
         }
     }
+
+    public static void timeScore(int timeScr){
+        Score.number = timeScr;
+    }
+
     public static void ResetLevels(){
         for (int i = 0; i < 9; i++)
         {
