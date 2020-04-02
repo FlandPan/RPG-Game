@@ -14,7 +14,12 @@ public class snakeHits : MonoBehaviour
     {
         if(other.tag == "Attack")
         {
-        health--;
+            Debug.Log(PlayerSingleton.player.GetComponent<PlayerStats>().pDamage);
+        for(int x =0; x < PlayerSingleton.player.GetComponent<PlayerStats>().pDamage;x++)
+        {
+            health--;
+        }
+        
         if(other.name != "boomerang(Clone)")
         Destroy(other.gameObject);
         }   
