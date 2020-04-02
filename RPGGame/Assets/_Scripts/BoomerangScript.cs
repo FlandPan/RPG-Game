@@ -11,6 +11,7 @@ public class BoomerangScript : ProjectileScript
     void Start()
     {
         hero = PlayerSingleton.player;
+        Damage = 20;
     }
 
     // Update is called once per frame

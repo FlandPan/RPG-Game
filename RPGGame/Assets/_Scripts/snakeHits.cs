@@ -12,7 +12,7 @@ public class snakeHits : MonoBehaviour
 
     void Awake()
     {
-        health = 100;
+        health = 500;
     }
     
     void OnTriggerEnter2D(Collider2D other)

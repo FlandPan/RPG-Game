@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class BossHits : MonoBehaviour
 {
-    private static int health = 500;
+
+    private static int health = 2500;
     public Text bossHP;
     public GameObject winText;
     void OnTriggerEnter2D(Collider2D other)

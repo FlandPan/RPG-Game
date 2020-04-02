@@ -37,7 +37,7 @@ public class bossScript : MonoBehaviour
     }
     void Update()
     {
-        if(BossHits.getHP()>25)
+        if(BossHits.getHP()>1250)
         {
             /***************ATTACK PATTERN 1 RANDOM PROJECTILES**************************/
             if(timeForRandomAttack<=0)
