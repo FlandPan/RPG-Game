@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossHits : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class BossHits : MonoBehaviour
         if(other.name !="boomerang(Clone)")
         Destroy(other.gameObject);
         }   
+    }
+    public void Home(){
+        SceneManager.LoadScene(0);
     }
     void Update()
     {

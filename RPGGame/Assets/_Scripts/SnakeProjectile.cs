@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class snakeProjectile : MonoBehaviour
+public class SnakeProjectile : MonoBehaviour
 {
     private int Damage = 20;
         
