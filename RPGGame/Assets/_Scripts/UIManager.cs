@@ -7,17 +7,41 @@ public class UIManager : MonoBehaviour
 {
     private Text _healthText;
     public int _hp = 1;
-    public Text PortalText;
+    public Text portalText;
+    public Text damageText;
+    private int pDamage;
     void Start()
     {
         GameEvents.current.OnPlayerDamage += DecreaseHealth;
         _hp = PlayerSingleton.player.GetComponent<PlayerStats>().playerHealth;
+        pDamage = PlayerSingleton.player.GetComponent<PlayerStats>().pDamage;
         _healthText = GameObject.Find("Health").GetComponent<Text>();
-        PortalText.enabled = false;
+        portalText.enabled = false;
+    }
+    public void DisplayDamage(){
+        int weaponChoice = PlayerSingleton.player.GetComponent<PlayerAttack>().weaponChoice;
+        int weaponDamage = 1;
+        switch (weaponChoice)
+        {
+            case 0:
+                weaponDamage = PencilScript.Damage;
+                break;
+            case 1:
+                weaponDamage = FireScript.Damage;
+                break;
+            case 2:
+                weaponDamage = BoltScript.Damage;
+                break;
+            case 3:
+                weaponDamage = BoomerangScript.Damage;
+                break;
+        }
+        damageText.text = "Damage: " + (pDamage*weaponDamage);
     }
     void Update()
     {
         _healthText.text = "HP: " + _hp;
+        DisplayDamage();
         if (_hp == 0){
             GameEvents.current.PlayerDied();
             PlayerSingleton.player.GetComponent<PlayerMovement>().DisableInputs();
@@ -33,10 +57,10 @@ public class UIManager : MonoBehaviour
         }
     }
     public void Display(string location){
-        PortalText.enabled = true;
-        PortalText.text = "Press E to teleport to " + location;
+        portalText.enabled = true;
+        portalText.text = "Press E to teleport to " + location;
     }
     public void DisplayExit(){
-        PortalText.enabled = false;
+        portalText.enabled = false;
     }
 }

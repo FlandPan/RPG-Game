@@ -126,14 +126,14 @@ public class PlayerAttack : MonoBehaviour
             }
             else if(direction == "up")
             {
-                Quaternion rotate = Quaternion.Euler(0,0,0);
+                Quaternion rotate = Quaternion.Euler(0,0,180);
                 GameObject projectile = Instantiate(projectilePrefab,transform.position, rotate);
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
                 rb.AddForce((new Vector3(0,1,0)) * bulletForce,ForceMode2D.Impulse);
             }
             else
             {
-                Quaternion rotate = Quaternion.Euler(0,0,180);
+                Quaternion rotate = Quaternion.Euler(0,0,0);
                 GameObject projectile = Instantiate(projectilePrefab,transform.position, rotate);
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
                 rb.AddForce((new Vector3(0,-1,0)) * bulletForce,ForceMode2D.Impulse);
