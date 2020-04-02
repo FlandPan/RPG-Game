@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     public GameObject enemyPrefab;
     private bool check = false;
-    private int maxEnemies = 1;
+    private int maxEnemies = 10;
     private int enemyCount =0;
     public bool done;
 

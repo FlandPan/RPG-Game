@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BossHits : MonoBehaviour
 {
 
-    private static int health = 10;
+    private static int health = 2500;
     public Text bossHP;
     public GameObject winText;
     void OnTriggerEnter2D(Collider2D other)
