@@ -37,6 +37,7 @@ public class Store : MonoBehaviour
             _player.GetComponent<PlayerAttack>()._maxShootSpd = (_player.GetComponent<PlayerAttack>()._maxShootSpd / 6) * 5;
             _player.GetComponent<PlayerAttack>()._maxBurnSpd = (_player.GetComponent<PlayerAttack>()._maxBurnSpd / 6) * 5;
             _player.GetComponent<PlayerAttack>()._maxBoltSpd = (_player.GetComponent<PlayerAttack>()._maxBoltSpd / 6) * 5;
+            _player.GetComponent<PlayerAttack>().bulletForce = _player.GetComponent<PlayerAttack>().bulletForce * 3/2;
             _coinManager.subtractCoins(10);
             canBuy.gameObject.SetActive(true);
             Invoke("_CanBuy",1);
