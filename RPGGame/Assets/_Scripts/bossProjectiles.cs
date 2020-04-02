@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossProjectiles : MonoBehaviour
 {
-    private int Damage = 5;
+    private int Damage = 8;
         
     void OnTriggerEnter2D(Collider2D other)
     {
