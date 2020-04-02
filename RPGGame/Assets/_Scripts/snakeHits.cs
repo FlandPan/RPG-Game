@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class snakeHits : MonoBehaviour
 {
-    private static int health = 25;
+    private static int health = 100;
     public Text snakeHP;
     public GameObject winUI;
     

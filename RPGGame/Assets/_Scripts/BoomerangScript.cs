@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoomerangScript : MonoBehaviour
+public class BoomerangScript : ProjectileScript
 {
     GameObject hero;
 
@@ -28,6 +28,6 @@ public class BoomerangScript : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(aim*15f,ForceMode2D.Impulse);
         }
     }
-     
+    
     
 }
