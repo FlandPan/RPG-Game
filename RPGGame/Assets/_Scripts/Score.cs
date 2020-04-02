@@ -6,7 +6,7 @@ public class Score : MonoBehaviour
     public Text score1;
     public Text score2;
     public Text score3;
-    public int number;
+    public static int number;
     void Start(){
         score1.text = "High Score 1: " + PlayerPrefs.GetInt("HS1").ToString();
         score2.text = "High Score 2: " + PlayerPrefs.GetInt("HS2").ToString();
