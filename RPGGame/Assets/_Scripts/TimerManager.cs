@@ -24,7 +24,7 @@ public class TimerManager : MonoBehaviour
         DontDestroyOnLoad(canvas);
         _timerText = this.gameObject.GetComponent<Text>();
         if (!_gameRestarted){
-            Timer.StartCountDown(new System.TimeSpan(0,0,10));
+            Timer.StartCountDown(new System.TimeSpan(0,2,0));
             _gameRestarted = true;
         }
     }

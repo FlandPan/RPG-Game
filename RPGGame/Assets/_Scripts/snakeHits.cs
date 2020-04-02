@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class snakeHits : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class snakeHits : MonoBehaviour
         if(other.tag == "Attack")
         {
         health--;
-        Debug.Log("snake hit");
         if(other.name != "boomerang(Clone)")
         Destroy(other.gameObject);
         }   
@@ -32,6 +32,10 @@ public class snakeHits : MonoBehaviour
             winUI.SetActive(true);
         }
         snakeHP.text = "Snake HP: " + health;
+    }
+    public void Home(){
+        Debug.Log("HOME");
+        SceneManager.LoadScene("Hub");
     }
     void OnCollisionEnter2D(Collision2D other)
     {

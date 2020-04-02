@@ -16,8 +16,9 @@ public class CoinLevelManager : MonoBehaviour
     }
     void Update()
     {
-        if (_completedLevels[1] && _completedLevels[2] && SceneManager.GetActiveScene().name != "Boss"){
-            SceneManager.LoadScene("Boss");
+        if (_completedLevels[1] && _completedLevels[2] && SceneManager.GetActiveScene().name != "Hub" && SceneManager.GetActiveScene().name != "Boss"){
+            SceneManager.LoadScene("Hub");
+            Timer.StartCountDown(new System.TimeSpan(0,0,10));
         }
     }
     public static void ResetLevels(){

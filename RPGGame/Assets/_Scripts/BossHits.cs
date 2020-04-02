@@ -12,7 +12,6 @@ public class BossHits : MonoBehaviour
         if(other.tag == "Attack")
         {
         health--;
-        Debug.Log("boss hit");
         if(other.name !="boomerang(Clone)")
         Destroy(other.gameObject);
         
