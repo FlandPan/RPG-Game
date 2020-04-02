@@ -1543,6 +1543,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2543570759604878241, guid: 99dfd5c2c9425f141a303867a6960c18,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3500076215014915547, guid: 99dfd5c2c9425f141a303867a6960c18,
         type: 3}
       propertyPath: m_Color.r
@@ -2406,9 +2411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb1dbc0f35f96c4d8d743eb5373d1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score1: {fileID: 93583068}
-  score2: {fileID: 1145303061}
-  score3: {fileID: 934646835}
+  s1: {fileID: 93583068}
+  s2: {fileID: 1145303061}
+  s3: {fileID: 934646835}
 --- !u!1 &1826512210
 GameObject:
   m_ObjectHideFlags: 0

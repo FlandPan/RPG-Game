@@ -19,6 +19,8 @@ public class CoinLevelManager : MonoBehaviour
     void Update()
     {
         if (_completedLevels[1] && _completedLevels[2] && SceneManager.GetActiveScene().name != "Hub" && SceneManager.GetActiveScene().name != "Boss"){
+            int timeSend = (int)Math.Round(Timer.TimeLeft.TotalSeconds * 100);
+            Score.SetScore(timeSend);
             SceneManager.LoadScene("Hub");
             Timer.StartCountDown(new System.TimeSpan(0,0,10));
         }

@@ -36,11 +36,8 @@ public class TimerManager : MonoBehaviour
     void Update()
     {
         _timerText.text = "Timer: " + Mathf.Round((float)Timer.TimeLeft.TotalSeconds);
-        
-        timeSend = (int)Math.Round(Timer.TimeLeft.TotalSeconds * 100); ;
-        
+                
         if (Timer.TimeLeft.TotalSeconds == 0 && !_loaded){
-            Score.updateNum(timeSend);
             SceneManager.LoadScene("Boss");
             _loaded = true;
         }
