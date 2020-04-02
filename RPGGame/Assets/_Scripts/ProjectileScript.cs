@@ -12,6 +12,7 @@ public abstract class ProjectileScript : PlayerStats
         if (enemy != null)
         {
             enemy.TakeDamage(Damage * pDamage);
+            if(name!="boomerang(Clone)")
             Destroy(gameObject);
         }
     }

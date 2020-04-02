@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     private float _burnAttSpd = 0;
     public float _maxBurnSpd = 1f;
     private float _boltAttSpd = 0;
-    public float _maxBoltSpd = 0.25f;
+    public float _maxBoltSpd = 0.12f;
     private bool _inputEnabled;
     private static bool _boltUnlocked;
     private static bool _boomUnlocked;
